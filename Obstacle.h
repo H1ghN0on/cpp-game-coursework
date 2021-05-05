@@ -1,8 +1,8 @@
 #ifndef OBSTACLE_H_INCLUDED
 #define OBSTACLE_H_INCLUDED
-#include "GameObject.h"
+#include "DynamicGameObject.h"
 class Tile;
-class Obstacle : public GameObject {
+class Obstacle : public DynamicGameObject {
 public:
     TilePosition *tilePosition;
     MoveInfo *move;

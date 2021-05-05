@@ -7,12 +7,6 @@ class Tile;
 class GameObject : public GameObjectPosition {
 protected:
     GameObject();
-    class MoveInfo {
-    public:
-        int direction;
-        int step;
-        int remain;
-    };
     class TilePosition {
     public:
         int str;

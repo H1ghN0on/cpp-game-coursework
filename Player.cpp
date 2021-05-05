@@ -235,7 +235,7 @@ void Player :: render() {
 
 void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextTileType, int secondNextTileType, int firstNextLine, int secondNextLine, int direction) {
     //player move
-    if (firstNextLine >= 0 && firstNextLine < 10 && firstNextTileType != 1 && firstNextTileType != 2) {
+    if (firstNextLine >= 0 && firstNextLine < 10 && firstNextTileType != 1 && firstNextTileType != 2 &&  firstNextTileType != 3 && firstNextTileType != 4) {
         move -> direction = direction;
         switch (direction) {
             case 1: {
@@ -256,22 +256,77 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
             }
         }
     } //box move;
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 1 && secondNextTileType != 1 && secondNextTileType != 2 && firstNextTile.obstacle -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 1 && (secondNextTileType == 0 || secondNextTileType == 3) && firstNextTile.obstacle -> move -> direction == 0) {
         firstNextTile.obstacle -> moveTo(direction);
         move -> direction = 0;
         move -> remain = 0;
     } //monster move
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && secondNextTileType != 2 && secondNextTileType != 1 && firstNextTile.monster -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 0 || secondNextTileType == 3) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> moveTo(direction);
         move -> direction = 0;
         move -> remain = 0;
     } //monster destroy
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 1 || secondNextTileType == 2) && firstNextTile.monster -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 1 || secondNextTileType == 2 || secondNextTileType == 4) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> setDestroyFlag();
         move -> direction = 0;
         move -> remain = 0;
     } else if ((secondNextLine == -1 || secondNextLine == 10) && firstNextTileType == 2 && firstNextTile.monster -> move -> direction == 0){
         firstNextTile.monster -> setDestroyFlag();
+        move -> direction = 0;
+        move -> remain = 0;
+    }//key up
+    else if (firstNextTileType == 3) {
+        move -> direction = direction;
+        switch (direction) {
+            case 1: {
+                tilePosition -> str--;
+                break;
+            }
+            case 2: {
+                tilePosition -> col++;
+                break;
+            }
+            case 3: {
+                tilePosition -> str++;
+                break;
+            }
+            case 4: {
+                tilePosition -> col--;
+                break;
+            }
+        }
+        keysId.push_back(firstNextTile.key -> getKeyId());
+        firstNextTile.key -> setDestroyFlag();
+    }//door
+    else if (firstNextTileType == 4) {
+        int size = keysId.size();
+        int lockId = firstNextTile.lock -> getLockId();
+        for (int i = 0; i < size; i++) {
+            if (keysId[i] == lockId) {
+                keysId.erase(keysId.begin() + i);
+                firstNextTile.lock -> setDestroyFlag();
+                move -> direction = direction;
+                switch (direction) {
+                    case 1: {
+                        tilePosition -> str--;
+                        break;
+                    }
+                    case 2: {
+                        tilePosition -> col++;
+                        break;
+                    }
+                    case 3: {
+                        tilePosition -> str++;
+                        break;
+                    }
+                    case 4: {
+                        tilePosition -> col--;
+                        break;
+                    }
+                }
+                return;
+            }
+        }
         move -> direction = 0;
         move -> remain = 0;
     } else {

@@ -1,11 +1,14 @@
 #ifndef PLAYER_H_INCLUDED
 #define PLAYER_H_INCLUDED
-#include "GameObject.h"
+#include <vector>
+#include "DynamicGameObject.h"
 class Tile;
-class Player : public GameObject {
+class Key;
+class Player : public DynamicGameObject {
 protected:
     TilePosition *tilePosition;
     MoveInfo *move;
+    std :: vector <int> keysId;
 public:
     void init();
     void update();

@@ -7,6 +7,8 @@
 class Box;
 class Monster;
 class Tile;
+class Key;
+class Lock;
 class Map {
 private:
     SDL_Texture *box = NULL;
@@ -24,18 +26,20 @@ private:
         int level[10][10] = {
            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
            {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-           {0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+           {0, 0, 0, 0, 0, 1, 0, 0, 4, 0},
            {0, 0, 1, 0, 2, 0, 0, 0, 0, 0},
            {0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
            {0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
            {0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
-           {0, 0, 0, 0, 1, 0, 0, 0, 0, 0},
+           {0, 0, 0, 0, 1, 0, 0, 3, 0, 0},
            {0, 2, 0, 0, 2, 0, 1, 0, 0, 0},
            {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
         };
     };
     std :: vector <Box*> boxes;
     std :: vector <Monster*> monsters;
+    std :: vector <Key*> keys;
+    std :: vector <Lock*> locks;
 //    std :: vector <Monster*> monsters;
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
