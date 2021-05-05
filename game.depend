@@ -1,0 +1,86 @@
+# depslib dependency file v1.0
+1620080578 source:c:\users\igorg\desktop\projects(again)\cpp-game\main.cpp
+	"Game.h"
+	<string>
+	<iostream>
+
+1620217317 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
+	"SDL2/SDL.h"
+	"Map.h"
+	"Player.h"
+
+1620218697 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
+	"Game.h"
+	<iostream>
+	"SDL2/SDL.h"
+	"Map.h"
+	"GameObject.h"
+
+1620218865 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
+	"GameObject.h"
+	"Tile.h"
+	<iostream>
+
+1620218850 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	"GameObjectPosition.h"
+
+1620081755 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
+	"Tile.h"
+	<iostream>
+
+1620158300 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
+	"Box.h"
+	"Monster.h"
+
+1620218838 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+	"Map.h"
+	"Tile.h"
+	"Box.h"
+	"Monster.h"
+	<iostream>
+
+1620218464 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	<vector>
+
+1620218633 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+	"Player.h"
+	"Tile.h"
+	<iostream>
+
+1620218633 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+	"GameObject.h"
+
+1620080185 c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.h
+
+1620052307 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.cpp
+	"GameObjectPosition.h"
+
+1620218583 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
+	"GameObject.h"
+
+1620164072 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
+	"Obstacle.h"
+	<iostream>
+	"Tile.h"
+
+1620218110 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
+	"Obstacle.h"
+
+1620218098 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
+	"Monster.h"
+	"Tile.h"
+	<iostream>
+
+1620218110 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
+	"Obstacle.h"
+
+1620218098 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
+	"Box.h"
+	"Tile.h"
+	<iostream>
+
