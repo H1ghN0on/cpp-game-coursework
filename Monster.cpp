@@ -25,6 +25,10 @@ void Monster :: render() {
     SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
 }
 
-void Monster :: destroy() {
+void Monster :: setDestroyFlag() {
+    destroyFlag = true;
+}
 
+bool Monster :: getDestroyFlag() {
+    return destroyFlag;
 }

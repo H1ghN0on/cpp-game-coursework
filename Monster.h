@@ -4,9 +4,12 @@
 #include "Obstacle.h"
 class Tile;
 class Monster : public Obstacle {
+private:
+    bool destroyFlag = false;
 public:
     void init(int i, int j);
-    void destroy();
+    void setDestroyFlag();
+    bool getDestroyFlag();
     void render();
 };
 

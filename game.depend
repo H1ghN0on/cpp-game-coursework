@@ -34,7 +34,7 @@
 	"Box.h"
 	"Monster.h"
 
-1620218838 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+1620224568 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
 	"Map.h"
 	"Tile.h"
 	"Box.h"
@@ -47,7 +47,7 @@
 	"SDL2/SDL_image.h"
 	<vector>
 
-1620218633 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1620224764 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
@@ -68,10 +68,10 @@
 	<iostream>
 	"Tile.h"
 
-1620218110 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
+1620224509 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
 	"Obstacle.h"
 
-1620218098 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
+1620224509 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
 	"Monster.h"
 	"Tile.h"
 	<iostream>

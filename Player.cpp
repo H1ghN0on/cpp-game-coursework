@@ -267,6 +267,11 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
         move -> remain = 0;
     } //monster destroy
     else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 1 || secondNextTileType == 2) && firstNextTile.monster -> move -> direction == 0) {
+        firstNextTile.monster -> setDestroyFlag();
+        move -> direction = 0;
+        move -> remain = 0;
+    } else if ((secondNextLine == -1 || secondNextLine == 10) && firstNextTileType == 2 && firstNextTile.monster -> move -> direction == 0){
+        firstNextTile.monster -> setDestroyFlag();
         move -> direction = 0;
         move -> remain = 0;
     } else {

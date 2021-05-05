@@ -66,6 +66,14 @@ void Map :: update() {
             int col = monsters[i] -> tilePosition -> col;
             this -> monsterSwitch(str, col, monsters[i] -> move -> direction, i);
         }
+        if (monsters[i] -> getDestroyFlag()) {
+            int str = monsters[i] -> tilePosition -> str;
+            int col = monsters[i] -> tilePosition -> col;
+            tile[str][col].setType(0);
+            delete tile[str][col].monster;
+            tile[str][col].monster = NULL;
+            monsters.erase(monsters.begin() + i);
+        }
     }
 }
 void Map :: render() {
