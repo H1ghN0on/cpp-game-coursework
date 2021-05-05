@@ -10,7 +10,6 @@ public:
     void init(int i, int j);
     void setDestroyFlag();
     bool getDestroyFlag();
-    void render();
 };
 
 

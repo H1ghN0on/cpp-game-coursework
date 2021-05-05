@@ -14,20 +14,6 @@ void Lock :: init(int i, int j, int id) {
     objectTexture = IMG_LoadTexture(renderer, "assets/lock.png");
 }
 
-void Lock :: render() {
-    destObjectR.x = getX();
-    destObjectR.y = getY();
-    SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
-}
-
 int Lock :: getLockId() {
     return lockId;
-}
-
-void Lock :: setDestroyFlag() {
-    destroyFlag = true;
-}
-
-bool Lock :: getDestroyFlag() {
-    return destroyFlag;
 }

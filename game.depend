@@ -16,46 +16,49 @@
 	"Map.h"
 	"GameObject.h"
 
-1620218865 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
+1620233894 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
 	"GameObject.h"
 	"Tile.h"
 	<iostream>
 
-1620225127 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
+1620234183 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	"GameObjectPosition.h"
 
-1620081755 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
+1620238560 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
 	"Tile.h"
 	<iostream>
 
-1620229640 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
+1620238303 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
+	<vector>
 	"Box.h"
 	"Monster.h"
 	"Key.h"
 	"Lock.h"
+	"Trap.h"
 
-1620232541 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+1620239561 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
 	"Map.h"
 	"Tile.h"
 	"Box.h"
 	"Monster.h"
 	"Key.h"
 	<iostream>
+	"Trap.h"
 
-1620229640 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
+1620235250 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
 	<iostream>
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	<vector>
 
-1620232520 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1620243843 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
 
-1620231448 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+1620237215 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
 	<vector>
 	"DynamicGameObject.h"
 
@@ -64,26 +67,26 @@
 1620052307 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.cpp
 	"GameObjectPosition.h"
 
-1620225127 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
+1620234045 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
 	"DynamicGameObject.h"
 
-1620164072 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
+1620234045 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
 	"Obstacle.h"
 	<iostream>
 	"Tile.h"
 
-1620224509 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
+1620233983 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
 	"Obstacle.h"
 
-1620227970 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
+1620233983 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
 	"Monster.h"
 	"Tile.h"
 	<iostream>
 
-1620218110 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
+1620233983 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
 	"Obstacle.h"
 
-1620218098 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
+1620233942 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
 	"Box.h"
 	"Tile.h"
 	<iostream>
@@ -93,17 +96,30 @@
 
 1620225056 source:c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.cpp
 
-1620231917 c:\users\igorg\desktop\projects(again)\cpp-game\key.h
-	"GameObject.h"
+1620233894 c:\users\igorg\desktop\projects(again)\cpp-game\key.h
+	"KeyLockSystem.h"
 
-1620231965 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
+1620233894 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
 	"Key.h"
 	"Tile.h"
 
-1620231917 c:\users\igorg\desktop\projects(again)\cpp-game\lock.h
+1620233942 c:\users\igorg\desktop\projects(again)\cpp-game\lock.h
+	"KeyLockSystem.h"
+
+1620233942 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
+	"Lock.h"
+	"Tile.h"
+
+1620233745 c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.h
 	"GameObject.h"
 
-1620231987 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
-	"Lock.h"
+1620233799 source:c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.cpp
+	"KeyLockSystem.h"
+
+1620236189 c:\users\igorg\desktop\projects(again)\cpp-game\trap.h
+	"GameObject.h"
+
+1620236189 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
+	"Trap.h"
 	"Tile.h"
 

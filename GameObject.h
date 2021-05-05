@@ -20,6 +20,7 @@ protected:
 public:
     GameObject(SDL_Renderer *u_renderer);
     void setMap(Tile **u_tile);
+    virtual void render();
 };
 
 #endif // GAMEOBJECT_H_INCLUDED

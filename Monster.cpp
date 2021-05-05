@@ -19,12 +19,6 @@ void Monster :: init(int i, int j) {
     objectTexture = IMG_LoadTexture(renderer, "assets/monster.png");
 }
 
-void Monster :: render() {
-    destObjectR.x = getX();
-    destObjectR.y = getY();
-    SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
-}
-
 void Monster :: setDestroyFlag() {
     destroyFlag = true;
 }

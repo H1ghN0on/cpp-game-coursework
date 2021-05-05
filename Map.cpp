@@ -4,6 +4,7 @@
 #include "Monster.h"
 #include "Key.h"
 #include <iostream>
+#include "Trap.h"
 using namespace std;
 
 void Map :: init(SDL_Renderer* u_renderer) {
@@ -21,7 +22,10 @@ void Map :: init(SDL_Renderer* u_renderer) {
     for (int i = 0; i < widthTileQuant; i++) {
         tile[i] = new Tile[heightTileQuant];
          for (int j = 0; j < heightTileQuant; j++) {
-            tile[i][j].setType(level_ -> level[i][j]);
+            tile[i][j].setType(0);
+            if (level_ -> level[i][j] != 0) {
+                tile[i][j].setType(level_ -> level[i][j]);
+            }
             tile[i][j].setX(dx);
             tile[i][j].setY(dy);
             dx += 64;
@@ -29,6 +33,14 @@ void Map :: init(SDL_Renderer* u_renderer) {
         dx = 0;
         dy += 64;
     }
+//    for (int i = 0; i < 10; i++) {
+//        for (int j = 0; j < 10; j++) {
+//            for (int k = 0; k < tile[i][j].type.size(); k++) {
+//                cout << tile[i][j].type[k] << " ";
+//            }
+//            cout << endl;
+//        }
+//    }
     dx = 0;
     dy += 64;
 }
@@ -38,27 +50,36 @@ void Map :: draw() {
     int doorId = 0;
     for (int i = 0; i < widthTileQuant; i++) {
         for (int j = 0; j < heightTileQuant; j++) {
-            if (tile[i][j].getType() == 1) {
-                tile[i][j].obstacle = new Box;
-                tile[i][j].obstacle -> init(i, j);
-                boxes.push_back(tile[i][j].obstacle);
-            }
-            if (tile[i][j].getType() == 2) {
-                tile[i][j].monster = new Monster;
-                tile[i][j].monster -> init(i, j);
-                monsters.push_back(tile[i][j].monster);
-            }
-            if (tile[i][j].getType() == 3) {
-                tile[i][j].key = new Key;
-                tile[i][j].key -> init(i, j, keyId);
-                keys.push_back(tile[i][j].key);
-                keyId++;
-            }
-            if (tile[i][j].getType() == 4) {
-                tile[i][j].lock = new Lock;
-                tile[i][j].lock -> init(i, j, doorId);
-                locks.push_back(tile[i][j].lock);
-                doorId++;
+            std :: vector <int> tileType = tile[i][j].getType();
+            int size = tileType.size();
+            for (int k = 0; k < size; k++) {
+                if (tileType[k] == 1) {
+                    tile[i][j].obstacle = new Box;
+                    tile[i][j].obstacle -> init(i, j);
+                    boxes.push_back(tile[i][j].obstacle);
+                }
+                if (tileType[k] == 2) {
+                    tile[i][j].monster = new Monster;
+                    tile[i][j].monster -> init(i, j);
+                    monsters.push_back(tile[i][j].monster);
+                }
+                if (tileType[k] == 3) {
+                    tile[i][j].key = new Key;
+                    tile[i][j].key -> init(i, j, keyId);
+                    keys.push_back(tile[i][j].key);
+                    keyId++;
+                }
+                if (tileType[k] == 4) {
+                    tile[i][j].lock = new Lock;
+                    tile[i][j].lock -> init(i, j, doorId);
+                    locks.push_back(tile[i][j].lock);
+                    doorId++;
+                }
+                if (tileType[k] == 5) {
+                    tile[i][j].trap = new Trap;
+                    tile[i][j].trap -> init(i, j, false);
+                    traps.push_back(tile[i][j].trap);
+                }
             }
         }
     }
@@ -84,7 +105,7 @@ void Map :: update() {
         if (monsters[i] -> getDestroyFlag()) {
             int str = monsters[i] -> tilePosition -> str;
             int col = monsters[i] -> tilePosition -> col;
-            tile[str][col].setType(0);
+            tile[str][col].delType(2);
             delete tile[str][col].monster;
             tile[str][col].monster = NULL;
             monsters.erase(monsters.begin() + i);
@@ -95,7 +116,7 @@ void Map :: update() {
         if (keys[i] -> getDestroyFlag()) {
             int str = keys[i] -> tilePosition -> str;
             int col = keys[i] -> tilePosition -> col;
-            tile[str][col].setType(0);
+            tile[str][col].delType(3);
             delete tile[str][col].key;
             tile[str][col].key = NULL;
             keys.erase(keys.begin() + i);
@@ -106,9 +127,9 @@ void Map :: update() {
         if (locks[i] -> getDestroyFlag()) {
             int str = locks[i] -> tilePosition -> str;
             int col = locks[i] -> tilePosition -> col;
-            tile[str][col].setType(0);
-            delete tile[str][col].key;
-            tile[str][col].key = NULL;
+            tile[str][col].delType(4);
+            delete tile[str][col].lock;
+            tile[str][col].lock = NULL;
             locks.erase(locks.begin() + i);
         }
     }
@@ -121,7 +142,11 @@ void Map :: render() {
             SDL_RenderCopy(renderer, mapTile, &srcTileR, &destTileR);
         }
     }
-    int size = keys.size();
+    int size = traps.size();
+    for (int i = 0; i < size; i++) {
+        traps[i] -> render();
+    }
+    size = keys.size();
     for (int i = 0; i < size; i++) {
         keys[i] -> render();
     }
@@ -167,11 +192,7 @@ void Map :: obstacleSwitch(int str, int col, int direction, int vectorPosition) 
     tile[strNew][colNew].setType(1);
     tile[strNew][colNew].obstacle = new Box;
     tile[strNew][colNew].obstacle -> init(strNew, colNew);
-    if (tile[str][col].key == NULL) {
-        tile[str][col].setType(0);
-    } else {
-        tile[str][col].setType(3);
-    }
+    tile[str][col].delType(1);
     delete tile[str][col].obstacle;
     tile[str][col].obstacle = NULL;
     boxes.erase(boxes.begin() + vectorPosition);
@@ -202,11 +223,7 @@ void Map :: monsterSwitch(int str, int col, int direction, int vectorPosition) {
     tile[strNew][colNew].setType(2);
     tile[strNew][colNew].monster = new Monster;
     tile[strNew][colNew].monster -> init(strNew, colNew);
-    if (tile[str][col].key == NULL) {
-        tile[str][col].setType(0);
-    } else {
-        tile[str][col].setType(3);
-    }
+    tile[str][col].delType(2);
     delete tile[str][col].monster;
     tile[str][col].monster = NULL;
     monsters.erase(monsters.begin() + vectorPosition);

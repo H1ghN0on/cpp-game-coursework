@@ -75,11 +75,6 @@ void Obstacle :: moveTo(int direction) {
     }
 }
 
-void Obstacle :: render() {
-    destObjectR.x = getX();
-    destObjectR.y = getY();
-    SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
-}
 
 Obstacle :: ~Obstacle() {
     delete move;

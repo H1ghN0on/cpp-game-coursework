@@ -8,7 +8,6 @@ public:
     MoveInfo *move;
     void update();
     void moveTo(int direction);
-    void render();
     ~Obstacle();
 };
 

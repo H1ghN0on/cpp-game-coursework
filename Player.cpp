@@ -71,8 +71,8 @@ void Player :: update() {
 void Player :: moveTo(int direction) {
     Tile firstNextTile;
     Tile secondNextTile;
-    int firstNextTileType = -1;
-    int secondNextTileType = -1;
+    std :: vector <int> firstNextTileType;
+    std :: vector <int> secondNextTileType;
     int firstNextLine;
     int secondNextLine;
     if (!move -> remain) {
@@ -229,13 +229,25 @@ void Player :: moveTo(int direction) {
     }
 }
 
-void Player :: render() {
-    SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
-}
-
-void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextTileType, int secondNextTileType, int firstNextLine, int secondNextLine, int direction) {
+void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector <int> firstNextTileType, std :: vector <int> secondNextTileType, int firstNextLine, int secondNextLine, int direction) {
+    //trap active
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            std :: vector <int> tileType = tile[i][j].getType();
+            int size = tileType.size();
+            for (int k = 0; k < size; k++) {
+                if (tileType[k] == 5) {
+                    if (tile[i][j].trap -> getActive()) {
+                        tile[i][j].trap -> setActive(false);
+                    } else {
+                        tile[i][j].trap -> setActive(true);
+                    }
+                }
+            }
+        }
+    }
     //player move
-    if (firstNextLine >= 0 && firstNextLine < 10 && firstNextTileType != 1 && firstNextTileType != 2 &&  firstNextTileType != 3 && firstNextTileType != 4) {
+    if (firstNextLine >= 0 && firstNextLine < 10 && !firstNextTile.findType(1) && !firstNextTile.findType(2) &&  !firstNextTile.findType(3) && !firstNextTile.findType(4) ) {
         move -> direction = direction;
         switch (direction) {
             case 1: {
@@ -256,26 +268,26 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
             }
         }
     } //box move;
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 1 && (secondNextTileType == 0 || secondNextTileType == 3) && firstNextTile.obstacle -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(1)  && (!secondNextTile.findType(1) && !secondNextTile.findType(2) && !secondNextTile.findType(4)) && firstNextTile.obstacle -> move -> direction == 0) {
         firstNextTile.obstacle -> moveTo(direction);
         move -> direction = 0;
         move -> remain = 0;
     } //monster move
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 0 || secondNextTileType == 3) && firstNextTile.monster -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (!secondNextTile.findType(1) && !secondNextTile.findType(2) && !secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> moveTo(direction);
         move -> direction = 0;
         move -> remain = 0;
     } //monster destroy
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTileType == 2 && (secondNextTileType == 1 || secondNextTileType == 2 || secondNextTileType == 4) && firstNextTile.monster -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (secondNextTile.findType(1)|| secondNextTile.findType(2) || secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> setDestroyFlag();
         move -> direction = 0;
         move -> remain = 0;
-    } else if ((secondNextLine == -1 || secondNextLine == 10) && firstNextTileType == 2 && firstNextTile.monster -> move -> direction == 0){
+    } else if ((secondNextLine == -1 || secondNextLine == 10) && firstNextTile.findType(2) && firstNextTile.monster -> move -> direction == 0){
         firstNextTile.monster -> setDestroyFlag();
         move -> direction = 0;
         move -> remain = 0;
     }//key up
-    else if (firstNextTileType == 3) {
+    else if (firstNextTile.findType(3)) {
         move -> direction = direction;
         switch (direction) {
             case 1: {
@@ -298,7 +310,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
         keysId.push_back(firstNextTile.key -> getKeyId());
         firstNextTile.key -> setDestroyFlag();
     }//door
-    else if (firstNextTileType == 4) {
+    else if (firstNextTile.findType(4)) {
         int size = keysId.size();
         int lockId = firstNextTile.lock -> getLockId();
         for (int i = 0; i < size; i++) {

@@ -13,8 +13,7 @@ public:
     void init();
     void update();
     void moveTo(int direction);
-    void render();
-    void moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextTileType, int secondNextTileType, int firstNextLine, int secondNextLine, int direction);
+    void moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector <int> firstNextTileType, std :: vector <int> secondNextTileType, int firstNextLine, int secondNextLine, int direction);
 };
 
 #endif // PLAYER_H_INCLUDED

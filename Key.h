@@ -1,18 +1,13 @@
 #ifndef KEY_H_INCLUDED
 #define KEY_H_INCLUDED
 
-#include "GameObject.h"
+#include "KeyLockSystem.h"
 
-class Key : public GameObject {
+class Key : public KeyLockSystem {
 protected:
-    bool destroyFlag = false;
     int keyId;
 public:
-    TilePosition *tilePosition;
     void init(int i, int j, int id);
-    void render();
-    void setDestroyFlag();
-    bool getDestroyFlag();
     int getKeyId();
 };
 

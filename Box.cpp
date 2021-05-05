@@ -19,9 +19,3 @@ void Box :: init(int i, int j) {
     move -> direction = 0;
     objectTexture = IMG_LoadTexture(renderer, "assets/box.png");
 }
-
-void Box :: render() {
-    destObjectR.x = getX();
-    destObjectR.y = getY();
-    SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
-}

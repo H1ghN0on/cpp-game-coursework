@@ -4,6 +4,7 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include <vector>
+class Trap;
 class Box;
 class Monster;
 class Tile;
@@ -30,16 +31,17 @@ private:
            {0, 0, 1, 0, 2, 0, 0, 0, 0, 0},
            {0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
            {0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-           {0, 0, 1, 0, 0, 0, 0, 1, 0, 0},
+           {0, 0, 1, 5, 5, 5, 5, 1, 0, 0},
            {0, 0, 0, 0, 1, 0, 0, 3, 0, 0},
            {0, 2, 0, 0, 2, 0, 1, 0, 0, 0},
-           {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+           {0, 0, 1, 0, 0, 0, 0, 0, 0, 3},
         };
     };
     std :: vector <Box*> boxes;
     std :: vector <Monster*> monsters;
     std :: vector <Key*> keys;
     std :: vector <Lock*> locks;
+    std :: vector <Trap*> traps;
 //    std :: vector <Monster*> monsters;
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
