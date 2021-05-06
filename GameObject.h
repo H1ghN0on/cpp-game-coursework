@@ -19,8 +19,10 @@ protected:
 
 public:
     GameObject(SDL_Renderer *u_renderer);
+    TilePosition *tilePosition = NULL;
     void setMap(Tile **u_tile);
     virtual void render();
+    ~GameObject();
 };
 
 #endif // GAMEOBJECT_H_INCLUDED

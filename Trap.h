@@ -7,7 +7,6 @@ class Trap : public GameObject {
 protected:
     bool isActive;
 public:
-    TilePosition *tilePosition;
     void init(int i, int j, int active);
     bool getActive();
     void setActive(bool active);

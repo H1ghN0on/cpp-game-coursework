@@ -7,7 +7,6 @@ class KeyLockSystem : public GameObject {
 protected:
     bool destroyFlag = false;
 public:
-    TilePosition *tilePosition;
     void setDestroyFlag();
     bool getDestroyFlag();
 };

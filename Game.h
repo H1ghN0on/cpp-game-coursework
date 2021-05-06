@@ -8,9 +8,9 @@
 class Game {
 private:
     int moving = 0;
-    Map *map = new Map;
-    Player *player = new Player;
-    GameObject *gameObject;
+    Map *map = NULL;
+    Player *player = NULL;
+    GameObject *gameObject = NULL;
 	bool isRunning = false;
 	bool isPressed = false;
 	SDL_Window* window = NULL;

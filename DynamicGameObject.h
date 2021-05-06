@@ -11,6 +11,8 @@ protected:
         int step;
         int remain;
     };
+public:
+    MoveInfo *move = NULL;
 };
 
 #endif // DYNAMICGAMEOBJECT_H_INCLUDED

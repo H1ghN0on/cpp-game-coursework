@@ -26,3 +26,7 @@ void Monster :: setDestroyFlag() {
 bool Monster :: getDestroyFlag() {
     return destroyFlag;
 }
+
+Monster :: ~Monster() {
+//    delete tilePosition;
+}

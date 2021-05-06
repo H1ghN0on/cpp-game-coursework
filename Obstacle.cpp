@@ -74,9 +74,3 @@ void Obstacle :: moveTo(int direction) {
         }
     }
 }
-
-
-Obstacle :: ~Obstacle() {
-    delete move;
-    delete tilePosition;
-}

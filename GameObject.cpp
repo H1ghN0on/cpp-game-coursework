@@ -21,3 +21,7 @@ void GameObject :: render() {
     destObjectR.y = getY();
     SDL_RenderCopy(renderer, objectTexture, &srcObjectR, &destObjectR);
 }
+
+GameObject :: ~GameObject() {
+    SDL_DestroyTexture(objectTexture);
+}

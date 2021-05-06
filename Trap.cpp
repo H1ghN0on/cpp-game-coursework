@@ -26,8 +26,11 @@ bool Trap :: getActive() {
 void Trap :: setActive(bool active) {
     isActive = active;
     if (isActive) {
+        SDL_DestroyTexture(objectTexture);
         objectTexture = IMG_LoadTexture(renderer, "assets/trap-active.png");
+
     } else {
+        SDL_DestroyTexture(objectTexture);
         objectTexture = IMG_LoadTexture(renderer, "assets/trap.png");
     }
 }

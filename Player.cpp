@@ -233,7 +233,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
     //trap active
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
-            std :: vector <int> tileType = tile[i][j].getType();
+            std :: vector <int> tileType = tile[i][j].getType();;
             int size = tileType.size();
             for (int k = 0; k < size; k++) {
                 if (tileType[k] == 5) {

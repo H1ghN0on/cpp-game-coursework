@@ -6,7 +6,6 @@ class Tile;
 class Key;
 class Player : public DynamicGameObject {
 protected:
-    TilePosition *tilePosition;
     MoveInfo *move;
     std :: vector <int> keysId;
 public:

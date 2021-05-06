@@ -4,11 +4,8 @@
 class Tile;
 class Obstacle : public DynamicGameObject {
 public:
-    TilePosition *tilePosition;
-    MoveInfo *move;
     void update();
     void moveTo(int direction);
-    ~Obstacle();
 };
 
 #endif // OBSTACLE_H_INCLUDED

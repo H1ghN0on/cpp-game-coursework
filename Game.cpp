@@ -24,7 +24,9 @@ void Game :: init(const char* title, int xpos, int ypos, int width, int height, 
 		isRunning = false;
 		std::cout << "Error..." << std::endl;
 	}
+	map = new Map;
     gameObject = new GameObject(renderer);
+    player = new Player;
 	map -> init(renderer);
 	gameObject -> setMap(map -> getMap());
 	map -> draw();

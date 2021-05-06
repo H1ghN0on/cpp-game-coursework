@@ -10,6 +10,8 @@ public:
     void init(int i, int j);
     void setDestroyFlag();
     bool getDestroyFlag();
+    TilePosition *tilePosition = NULL;
+    ~Monster();
 };
 
 
