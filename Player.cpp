@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 void Player :: init () {
+    stepController = new StepController(20);
     destObjectR.w = srcObjectR.w = 64;
     destObjectR.h = srcObjectR.h = 64;
     tilePosition = new TilePosition;
@@ -230,6 +231,14 @@ void Player :: moveTo(int direction) {
 }
 
 void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector <int> firstNextTileType, std :: vector <int> secondNextTileType, int firstNextLine, int secondNextLine, int direction) {
+    //move to wall
+    if (firstNextLine < 0 || firstNextLine >= 10) {
+        move -> direction = 0;
+        move -> remain = 0;
+        return;
+    }
+    stepController -> passStep();
+    cout << stepController -> getStep() << endl;
     //trap active
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
@@ -278,7 +287,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
         move -> direction = 0;
         move -> remain = 0;
     } //monster destroy
-    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (secondNextTile.findType(1)|| secondNextTile.findType(2) || secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
+    else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (secondNextTile.findType(1) || secondNextTile.findType(2) || secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> setDestroyFlag();
         move -> direction = 0;
         move -> remain = 0;

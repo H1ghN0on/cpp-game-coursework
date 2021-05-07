@@ -53,14 +53,15 @@
 	"SDL2/SDL_image.h"
 	<vector>
 
-1620334218 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1620381542 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
 
-1620334078 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+1620379566 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
 	<vector>
 	"DynamicGameObject.h"
+	"StepController.h"
 
 1620080185 c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.h
 
@@ -86,7 +87,7 @@
 1620233983 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
 	"Obstacle.h"
 
-1620233942 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
+1620334968 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
 	"Box.h"
 	"Tile.h"
 	<iostream>
@@ -122,4 +123,9 @@
 1620334730 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
 	"Trap.h"
 	"Tile.h"
+
+1620381584 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
+
+1620381496 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
+	"StepController.h"
 

@@ -2,10 +2,13 @@
 #define PLAYER_H_INCLUDED
 #include <vector>
 #include "DynamicGameObject.h"
+#include "StepController.h"
 class Tile;
 class Key;
+class StepController;
 class Player : public DynamicGameObject {
 protected:
+    StepController *stepController;
     MoveInfo *move;
     std :: vector <int> keysId;
 public:

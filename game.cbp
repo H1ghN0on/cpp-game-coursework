@@ -59,6 +59,8 @@
 		<Unit filename="Obstacle.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="StepController.cpp" />
+		<Unit filename="StepController.h" />
 		<Unit filename="Tile.cpp" />
 		<Unit filename="Tile.h" />
 		<Unit filename="Trap.cpp" />
