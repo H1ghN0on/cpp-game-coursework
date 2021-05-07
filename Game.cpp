@@ -3,6 +3,7 @@
 #include "SDL2/SDL.h"
 #include "Map.h"
 #include "GameObject.h"
+#include "FileManager.h"
 #include "StepController.h"
 void Game :: init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flag = 0;
@@ -25,6 +26,7 @@ void Game :: init(const char* title, int xpos, int ypos, int width, int height, 
 		isRunning = false;
 		std::cout << "Error..." << std::endl;
 	}
+	fileManager -> readFile("level2");
 	map = new Map;
     gameObject = new GameObject(renderer);
     player = new Player;

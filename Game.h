@@ -3,7 +3,9 @@
 #include "SDL2/SDL.h"
 #include "Map.h"
 #include "Player.h"
+#include "FileManager.h"
 //Singletone
+class FileManager;
 class StepController;
 class Game {
 private:
@@ -20,6 +22,7 @@ private:
 	Game(Game const&);
 	Game& operator= (Game const&);
     StepController *stepController = new StepController;
+    FileManager *fileManager = new FileManager;
 
 public:
     static Game& instance();

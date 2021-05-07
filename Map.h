@@ -4,6 +4,8 @@
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include <vector>
+class Level;
+class LevelInfo;
 class Trap;
 class Box;
 class Monster;
@@ -20,24 +22,6 @@ private:
     SDL_Rect destTileR;
     int widthTileQuant;
     int heightTileQuant;
-    class Level {
-    public:
-        const int widthTileQuant = 10;
-        const int heightTileQuant = 10;
-        int level[10][10] = {
-           {0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
-           {0, 0, 0, 0, 0, 0, 0, 1, 0, 0},
-           {0, 0, 0, 0, 0, 1, 0, 0, 4, 0},
-           {0, 0, 1, 0, 2, 0, 0, 0, 0, 0},
-           {0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
-           {0, 0, 0, 0, 0, 1, 1, 0, 0, 0},
-           {0, 0, 1, 5, 5, 5, 5, 1, 0, 0},
-           {0, 0, 0, 0, 1, 0, 0, 3, 0, 0},
-           {0, 2, 0, 0, 2, 0, 1, 0, 0, 0},
-           {0, 0, 1, 0, 0, 0, 0, 0, 0, 3},
-        };
-        int step = 20;
-    };
     std :: vector <Box*> boxes;
     std :: vector <Monster*> monsters;
     std :: vector <Key*> keys;
@@ -47,6 +31,7 @@ private:
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
     Level *level_ = NULL;
+    LevelInfo *levelInfo_ = NULL;
 
 public:
     void init(SDL_Renderer *u_renderer);

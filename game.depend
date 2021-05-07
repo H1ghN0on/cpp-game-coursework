@@ -4,17 +4,19 @@
 	<string>
 	<iostream>
 
-1620386383 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
+1620390998 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
 	"SDL2/SDL.h"
 	"Map.h"
 	"Player.h"
+	"FileManager.h"
 
-1620386708 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
+1620390833 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
 	"Game.h"
 	<iostream>
 	"SDL2/SDL.h"
 	"Map.h"
 	"GameObject.h"
+	"FileManager.h"
 	"StepController.h"
 
 1620334473 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
@@ -39,7 +41,7 @@
 	"Lock.h"
 	"Trap.h"
 
-1620386670 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+1620388864 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
 	"Map.h"
 	"Tile.h"
 	"Box.h"
@@ -48,8 +50,10 @@
 	<iostream>
 	"StepController.h"
 	"Trap.h"
+	"Level.h"
+	"LevelInfo.h"
 
-1620386678 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
+1620388813 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
 	<iostream>
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
@@ -130,4 +134,23 @@
 
 1620381496 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
 	"StepController.h"
+
+1620391121 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
+	"Level.h"
+
+1620391181 c:\users\igorg\desktop\projects(again)\cpp-game\level.h
+
+1620391222 source:c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.cpp
+	"LevelInfo.h"
+
+1620391181 c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.h
+
+1620389355 c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.h
+	"Level.h"
+	"LevelInfo.h"
+
+1620390929 source:c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.cpp
+	<iostream>
+	<fstream>
+	"FileManager.h"
 

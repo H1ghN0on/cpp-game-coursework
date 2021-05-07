@@ -6,6 +6,8 @@
 #include <iostream>
 #include "StepController.h"
 #include "Trap.h"
+#include "Level.h"
+#include "LevelInfo.h"
 using namespace std;
 
 void Map :: init(SDL_Renderer* u_renderer) {
@@ -16,10 +18,11 @@ void Map :: init(SDL_Renderer* u_renderer) {
     mapTile = IMG_LoadTexture(renderer, "assets/tile.png");
     box = IMG_LoadTexture(renderer, "assets/box.png");
     level_ = new Level;
-    StepController *stepController = new StepController(level_ -> step);
+    levelInfo_ = new LevelInfo;
+    StepController *stepController = new StepController(levelInfo_ -> step);
     delete stepController;
-    widthTileQuant = level_ -> widthTileQuant;
-    heightTileQuant = level_ -> heightTileQuant;
+    widthTileQuant = levelInfo_ -> widthTileQuant;
+    heightTileQuant = levelInfo_ -> heightTileQuant;
     tile = new Tile*[widthTileQuant];
     for (int i = 0; i < widthTileQuant; i++) {
         tile[i] = new Tile[heightTileQuant];
