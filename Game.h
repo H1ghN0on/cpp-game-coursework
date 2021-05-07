@@ -4,7 +4,7 @@
 #include "Map.h"
 #include "Player.h"
 //Singletone
-
+class StepController;
 class Game {
 private:
     int moving = 0;
@@ -19,6 +19,7 @@ private:
 	~Game();
 	Game(Game const&);
 	Game& operator= (Game const&);
+    StepController *stepController = new StepController;
 
 public:
     static Game& instance();

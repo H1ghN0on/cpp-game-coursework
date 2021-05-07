@@ -3,6 +3,7 @@
 #include "SDL2/SDL.h"
 #include "Map.h"
 #include "GameObject.h"
+#include "StepController.h"
 void Game :: init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flag = 0;
 	if (fullscreen) {
@@ -71,6 +72,10 @@ void Game :: handleEvents() {
 void Game :: update() {
     player -> update();
     map -> update();
+    if (stepController -> getStep() == 0) {
+        stepController -> setStep(20);
+    }
+
 }
 void Game :: render() {
     SDL_SetRenderDrawColor(renderer, 104, 0, 100, 255);

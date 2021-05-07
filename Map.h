@@ -36,6 +36,7 @@ private:
            {0, 2, 0, 0, 2, 0, 1, 0, 0, 0},
            {0, 0, 1, 0, 0, 0, 0, 0, 0, 3},
         };
+        int step = 20;
     };
     std :: vector <Box*> boxes;
     std :: vector <Monster*> monsters;
@@ -45,6 +46,7 @@ private:
 //    std :: vector <Monster*> monsters;
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
+    Level *level_ = NULL;
 
 public:
     void init(SDL_Renderer *u_renderer);

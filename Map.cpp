@@ -4,6 +4,7 @@
 #include "Monster.h"
 #include "Key.h"
 #include <iostream>
+#include "StepController.h"
 #include "Trap.h"
 using namespace std;
 
@@ -14,24 +15,18 @@ void Map :: init(SDL_Renderer* u_renderer) {
     renderer = u_renderer;
     mapTile = IMG_LoadTexture(renderer, "assets/tile.png");
     box = IMG_LoadTexture(renderer, "assets/box.png");
-    int dx = 0, dy = 0;
-    Level *level_ = new Level;
+    level_ = new Level;
+    StepController *stepController = new StepController(level_ -> step);
+    delete stepController;
     widthTileQuant = level_ -> widthTileQuant;
     heightTileQuant = level_ -> heightTileQuant;
     tile = new Tile*[widthTileQuant];
     for (int i = 0; i < widthTileQuant; i++) {
         tile[i] = new Tile[heightTileQuant];
-         for (int j = 0; j < heightTileQuant; j++) {
-            tile[i][j].setType(0);
-            if (level_ -> level[i][j] != 0) {
-                tile[i][j].setType(level_ -> level[i][j]);
-            }
-            tile[i][j].setX(dx);
-            tile[i][j].setY(dy);
-            dx += 64;
+        for (int j = 0; j < heightTileQuant; j++) {
+
+
         }
-        dx = 0;
-        dy += 64;
     }
 //    for (int i = 0; i < 10; i++) {
 //        for (int j = 0; j < 10; j++) {
@@ -41,15 +36,20 @@ void Map :: init(SDL_Renderer* u_renderer) {
 //            cout << endl;
 //        }
 //    }
-    dx = 0;
-    dy += 64;
 }
 
 void Map :: draw() {
+    int dx = 0, dy = 0;
     int keyId = 0;
     int doorId = 0;
     for (int i = 0; i < widthTileQuant; i++) {
         for (int j = 0; j < heightTileQuant; j++) {
+            tile[i][j].setType(0);
+            if (level_ -> level[i][j] != 0) {
+                tile[i][j].setType(level_ -> level[i][j]);
+            }
+            tile[i][j].setX(dx);
+            tile[i][j].setY(dy);
             std :: vector <int> tileType = tile[i][j].getType();
             int size = tileType.size();
             for (int k = 0; k < size; k++) {
@@ -81,7 +81,10 @@ void Map :: draw() {
                     traps.push_back(tile[i][j].trap);
                 }
             }
+            dx += 64;
         }
+        dx = 0;
+        dy += 64;
     }
 }
 void Map :: update() {

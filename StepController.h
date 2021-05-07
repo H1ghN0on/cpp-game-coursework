@@ -4,8 +4,8 @@
 class StepController {
 protected:
     static int step;
-    StepController();
 public:
+    StepController();
     StepController(int value);
     int getStep();
     void setStep(int value);

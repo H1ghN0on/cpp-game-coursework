@@ -3,7 +3,7 @@
 #include <iostream>
 using namespace std;
 void Player :: init () {
-    stepController = new StepController(20);
+    stepController = new StepController;
     destObjectR.w = srcObjectR.w = 64;
     destObjectR.h = srcObjectR.h = 64;
     tilePosition = new TilePosition;
@@ -72,8 +72,6 @@ void Player :: update() {
 void Player :: moveTo(int direction) {
     Tile firstNextTile;
     Tile secondNextTile;
-    std :: vector <int> firstNextTileType;
-    std :: vector <int> secondNextTileType;
     int firstNextLine;
     int secondNextLine;
     if (!move -> remain) {
@@ -87,11 +85,9 @@ void Player :: moveTo(int direction) {
                 secondNextLine = str - 2;
                 if (firstNextLine >= 0) {
                     firstNextTile = tile[firstNextLine][col];
-                    firstNextTileType = tile[firstNextLine][col].getType();
                 }
                 if (secondNextLine >= 0) {
                     secondNextTile = tile[secondNextLine][col];
-                    secondNextTileType = tile[secondNextLine][col].getType();
                 }
 //                //player move
 //                if (str - 1 >= 0 && firstNextTile.getType() != 1 && firstNextTile.getType() != 2) {
@@ -116,7 +112,7 @@ void Player :: moveTo(int direction) {
 //                    move -> direction = 0;
 //                    move -> remain = 0;
 //                }
-                this -> moveObject(firstNextTile, secondNextTile, firstNextTileType, secondNextTileType, firstNextLine, secondNextLine, direction);
+                this -> moveObject(firstNextTile, secondNextTile, firstNextLine, secondNextLine, direction);
                 break;
             }
             // right
@@ -125,11 +121,9 @@ void Player :: moveTo(int direction) {
                 secondNextLine = col + 2;
                 if (firstNextLine < 10) {
                     firstNextTile = tile[str][firstNextLine];
-                    firstNextTileType = tile[str][firstNextLine].getType();
                 }
                 if (secondNextLine < 10) {
                     secondNextTile = tile[str][secondNextLine];
-                    secondNextTileType = tile[str][secondNextLine].getType();
                 }
 //                if (col + 1 < 10 && tile[str][col + 1].getType() != 1 && tile[str][col + 1].getType() != 2) {
 //                    move -> direction = 2;
@@ -149,7 +143,7 @@ void Player :: moveTo(int direction) {
 //                    move -> direction = 0;
 //                    move -> remain = 0;
 //                }
-                this -> moveObject(firstNextTile, secondNextTile, firstNextTileType, secondNextTileType, firstNextLine, secondNextLine, direction);
+                this -> moveObject(firstNextTile, secondNextTile, firstNextLine, secondNextLine, direction);
                 break;
             }
             //down
@@ -158,11 +152,9 @@ void Player :: moveTo(int direction) {
                 secondNextLine = str + 2;
                 if (firstNextLine < 10) {
                     firstNextTile = tile[firstNextLine][col];
-                    firstNextTileType = tile[firstNextLine][col].getType();
                 }
                 if (secondNextLine < 10) {
                     secondNextTile = tile[secondNextLine][col];
-                    secondNextTileType = tile[secondNextLine][col].getType();
                 }
 //                if (firstNextLine >= 0) {
 //                    firstNextTile = tile[firstNextLine][col];
@@ -190,7 +182,7 @@ void Player :: moveTo(int direction) {
 //                    move -> direction = 0;
 //                    move -> remain = 0;
 //                }
-                this -> moveObject(firstNextTile, secondNextTile, firstNextTileType, secondNextTileType, firstNextLine, secondNextLine, direction);
+                this -> moveObject(firstNextTile, secondNextTile,firstNextLine, secondNextLine, direction);
                 break;
             }
             //left
@@ -199,11 +191,9 @@ void Player :: moveTo(int direction) {
                 secondNextLine = col - 2;
                 if (firstNextLine >= 0) {
                     firstNextTile = tile[str][firstNextLine];
-                    firstNextTileType = tile[str][firstNextLine].getType();
                 }
                 if (secondNextLine >= 0) {
                     secondNextTile = tile[str][secondNextLine];
-                    secondNextTileType = tile[str][secondNextLine].getType();
                 }
 //                if (col - 1 >= 0 && tile[str][col - 1].getType() != 1 && tile[str][col - 1].getType() != 2 ) {
 //                    move -> direction = 4;
@@ -223,23 +213,22 @@ void Player :: moveTo(int direction) {
 //                    move -> direction = 0;
 //                    move -> remain = 0;
 //                }
-                this -> moveObject(firstNextTile, secondNextTile, firstNextTileType, secondNextTileType, firstNextLine, secondNextLine, direction);
+                this -> moveObject(firstNextTile, secondNextTile, firstNextLine, secondNextLine, direction);
                 break;
             }
         }
     }
 }
 
-void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector <int> firstNextTileType, std :: vector <int> secondNextTileType, int firstNextLine, int secondNextLine, int direction) {
+void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextLine, int secondNextLine, int direction) {
     //move to wall
+    int str = tilePosition -> str;
+    int col = tilePosition -> col;
     if (firstNextLine < 0 || firstNextLine >= 10) {
         move -> direction = 0;
         move -> remain = 0;
         return;
     }
-    stepController -> passStep();
-    cout << stepController -> getStep() << endl;
-    //trap active
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 10; j++) {
             std :: vector <int> tileType = tile[i][j].getType();;
@@ -255,6 +244,11 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
             }
         }
     }
+    if (firstNextTile.findType(5) && firstNextTile.trap -> getActive()) {
+        stepController -> passStep();
+    }
+    stepController -> passStep();
+    //trap active
     //player move
     if (firstNextLine >= 0 && firstNextLine < 10 && !firstNextTile.findType(1) && !firstNextTile.findType(2) &&  !firstNextTile.findType(3) && !firstNextTile.findType(4) ) {
         move -> direction = direction;
@@ -276,25 +270,42 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
                 break;
             }
         }
+        cout << stepController -> getStep() << endl;
     } //box move;
     else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(1)  && (!secondNextTile.findType(1) && !secondNextTile.findType(2) && !secondNextTile.findType(4)) && firstNextTile.obstacle -> move -> direction == 0) {
         firstNextTile.obstacle -> moveTo(direction);
+        if (tile[str][col].findType(5) && tile[str][col].trap -> getActive()) {
+            stepController -> passStep();
+        }
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     } //monster move
     else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (!secondNextTile.findType(1) && !secondNextTile.findType(2) && !secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> moveTo(direction);
+        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+            stepController -> passStep();
+        }
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     } //monster destroy
     else if (secondNextLine >= 0 && secondNextLine < 10 && firstNextTile.findType(2) && (secondNextTile.findType(1) || secondNextTile.findType(2) || secondNextTile.findType(4)) && firstNextTile.monster -> move -> direction == 0) {
         firstNextTile.monster -> setDestroyFlag();
+        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+            stepController -> passStep();
+        }
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     } else if ((secondNextLine == -1 || secondNextLine == 10) && firstNextTile.findType(2) && firstNextTile.monster -> move -> direction == 0){
         firstNextTile.monster -> setDestroyFlag();
+        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+            stepController -> passStep();
+        }
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     }//key up
     else if (firstNextTile.findType(3)) {
         move -> direction = direction;
@@ -318,6 +329,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
         }
         keysId.push_back(firstNextTile.key -> getKeyId());
         firstNextTile.key -> setDestroyFlag();
+        cout << stepController -> getStep() << endl;
     }//door
     else if (firstNextTile.findType(4)) {
         int size = keysId.size();
@@ -348,10 +360,15 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, std :: vector
                 return;
             }
         }
+        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+            stepController -> passStep();
+        }
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     } else {
         move -> direction = 0;
         move -> remain = 0;
+        cout << stepController -> getStep() << endl;
     }
 }
