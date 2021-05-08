@@ -10,6 +10,8 @@
 #include "LevelInfo.h"
 using namespace std;
 
+Tile** Map :: tile;
+
 void Map :: init(SDL_Renderer* u_renderer) {
     destTileR.w = srcTileR.w = 64;
     destTileR.h = srcTileR.h = 64;
@@ -26,10 +28,6 @@ void Map :: init(SDL_Renderer* u_renderer) {
     tile = new Tile*[widthTileQuant];
     for (int i = 0; i < widthTileQuant; i++) {
         tile[i] = new Tile[heightTileQuant];
-        for (int j = 0; j < heightTileQuant; j++) {
-
-
-        }
     }
 //    for (int i = 0; i < 10; i++) {
 //        for (int j = 0; j < 10; j++) {
@@ -234,4 +232,20 @@ void Map :: monsterSwitch(int str, int col, int direction, int vectorPosition) {
     tile[str][col].monster = NULL;
     monsters.erase(monsters.begin() + vectorPosition);
     monsters.push_back(tile[strNew][colNew].monster);
+}
+
+void Map :: destroy() {
+    for (int i = 0; i < widthTileQuant; i++) {
+        for (int j = 0; j < heightTileQuant; j++) {
+            tile[i][j].destroy();
+        }
+        delete[] tile[i];
+    }
+    delete[] tile;
+    boxes.clear();
+    monsters.clear();
+    keys.clear();
+    locks.clear();
+    traps.clear();
+    SDL_DestroyTexture(mapTile);
 }

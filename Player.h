@@ -13,9 +13,11 @@ protected:
     std :: vector <int> keysId;
 public:
     void init();
+    void setPosition(int str, int col);
     void update();
     void moveTo(int direction);
     void moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextLine, int secondNextLine, int direction);
+    void destroy();
 };
 
 #endif // PLAYER_H_INCLUDED

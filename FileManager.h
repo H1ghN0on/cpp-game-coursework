@@ -4,7 +4,7 @@
 #include "LevelInfo.h"
 class FileManager : public Level, public LevelInfo{
 public:
-    void readFile(char *filename);
+    bool readFile(std :: string filename);
 };
 
 #endif // FILEMANAGER_H_INCLUDED

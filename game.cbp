@@ -39,6 +39,8 @@
 		<Unit filename="Box.h" />
 		<Unit filename="DynamicGameObject.cpp" />
 		<Unit filename="DynamicGameObject.h" />
+		<Unit filename="FileManager.cpp" />
+		<Unit filename="FileManager.h" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.h" />
 		<Unit filename="GameObject.cpp" />
@@ -49,6 +51,10 @@
 		<Unit filename="Key.h" />
 		<Unit filename="KeyLockSystem.cpp" />
 		<Unit filename="KeyLockSystem.h" />
+		<Unit filename="Level.cpp" />
+		<Unit filename="Level.h" />
+		<Unit filename="LevelInfo.cpp" />
+		<Unit filename="LevelInfo.h" />
 		<Unit filename="Lock.cpp" />
 		<Unit filename="Lock.h" />
 		<Unit filename="Map.cpp" />

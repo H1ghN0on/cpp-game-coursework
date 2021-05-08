@@ -21,6 +21,7 @@ public:
     void setType(const int &u_type);
     void delType(const int &u_type);
     bool findType(const int &u_type);
+    void destroy();
 };
 
 #endif // TILE_H_INCLUDED

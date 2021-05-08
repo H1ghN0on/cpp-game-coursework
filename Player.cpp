@@ -8,20 +8,22 @@ void Player :: init () {
     destObjectR.h = srcObjectR.h = 64;
     tilePosition = new TilePosition;
     move = new MoveInfo;
-    tilePosition -> str = 0;
-    tilePosition -> col = 0;
-    destObjectR.x = tile[tilePosition -> str][tilePosition -> col].getX();
-    destObjectR.y = tile[tilePosition -> str][tilePosition -> col].getY();
     srcObjectR.x = 0;
     srcObjectR.y = 0;
     objectTexture = IMG_LoadTexture(renderer, "assets/player.png");
-    this -> setX(0);
-    this -> setY(0);
     move -> direction = 0;
     move -> step = 2;
     move -> remain = 0;
 }
 
+void Player :: setPosition(int str, int col) {
+    tilePosition -> str = str;
+    tilePosition -> col = col;
+    destObjectR.x = tile[str][col].getX();
+    destObjectR.y = tile[str][col].getY();
+    this -> setX(destObjectR.x);
+    this -> setY(destObjectR.y);
+}
 void Player :: update() {
     switch (move -> direction) {
         case 0: {
@@ -371,4 +373,12 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
         move -> remain = 0;
         cout << stepController -> getStep() << endl;
     }
+}
+
+void Player :: destroy() {
+    move -> direction = 0;
+    move -> remain = 0;
+    tilePosition -> str = 0;
+    tilePosition -> col = 0;
+    keysId.clear();
 }

@@ -1,12 +1,18 @@
 #include <iostream>
 #include <fstream>
 #include "FileManager.h"
+
 using namespace std;
-void FileManager :: readFile(char *filename) {
+bool FileManager :: readFile(string filename) {
     ifstream out(filename, ios::binary|ios::in);
+    if (!out) {
+        return false;
+    }
     out.read((char*)&widthTileQuant, sizeof(int));
     out.read((char*)&heightTileQuant, sizeof(int));
     out.read((char*)&step, sizeof(int));
+    out.read((char*)&strPosition, sizeof(int));
+    out.read((char*)&colPosition, sizeof(int));
     level = new int*[widthTileQuant];
     for (int i = 0; i < widthTileQuant;i++) {
         level[i] = new int[heightTileQuant];
@@ -15,6 +21,7 @@ void FileManager :: readFile(char *filename) {
         }
     }
     out.close();
+    return true;
 //    cout << widthTileQuant << endl;
 //    cout << heightTileQuant << endl;
 //    cout << step << endl;

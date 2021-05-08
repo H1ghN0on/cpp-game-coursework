@@ -17,7 +17,7 @@ private:
     SDL_Texture *box = NULL;
     SDL_Texture *mapTile = NULL;
     SDL_Renderer *renderer = NULL;
-    Tile **tile = NULL;
+    static Tile **tile;
     SDL_Rect srcTileR;
     SDL_Rect destTileR;
     int widthTileQuant;
@@ -27,7 +27,6 @@ private:
     std :: vector <Key*> keys;
     std :: vector <Lock*> locks;
     std :: vector <Trap*> traps;
-//    std :: vector <Monster*> monsters;
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
     Level *level_ = NULL;
@@ -38,6 +37,7 @@ public:
     void update();
     void render();
     void draw();
+    void destroy();
     Tile **getMap();
 };
 

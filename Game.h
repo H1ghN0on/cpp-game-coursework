@@ -23,6 +23,9 @@ private:
 	Game& operator= (Game const&);
     StepController *stepController = new StepController;
     FileManager *fileManager = new FileManager;
+    LevelInfo *levelInfo = new LevelInfo;
+    void setLevel(int number);
+    int levelNumber;
 
 public:
     static Game& instance();

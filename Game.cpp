@@ -1,10 +1,12 @@
 #include "Game.h"
 #include <iostream>
+#include <string>
 #include "SDL2/SDL.h"
 #include "Map.h"
 #include "GameObject.h"
 #include "FileManager.h"
 #include "StepController.h"
+#include "LevelInfo.h"
 void Game :: init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen) {
 	int flag = 0;
 	if (fullscreen) {
@@ -26,7 +28,7 @@ void Game :: init(const char* title, int xpos, int ypos, int width, int height, 
 		isRunning = false;
 		std::cout << "Error..." << std::endl;
 	}
-	fileManager -> readFile("level2");
+    fileManager -> readFile("level1");
 	map = new Map;
     gameObject = new GameObject(renderer);
     player = new Player;
@@ -34,6 +36,8 @@ void Game :: init(const char* title, int xpos, int ypos, int width, int height, 
 	gameObject -> setMap(map -> getMap());
 	map -> draw();
     player -> init();
+    player -> setPosition(levelInfo -> strPosition, levelInfo -> colPosition);
+    levelNumber = 1;
 }
 
 void Game :: handleEvents() {
@@ -74,8 +78,8 @@ void Game :: handleEvents() {
 void Game :: update() {
     player -> update();
     map -> update();
-    if (stepController -> getStep() == 0) {
-        stepController -> setStep(20);
+    if (stepController -> getStep() <= -1) {
+        setLevel(++levelNumber);
     }
 
 }
@@ -110,4 +114,20 @@ Game :: ~Game() {
 Game& Game :: instance() {
     static Game s;
     return s;
+}
+
+void Game :: setLevel(int level) {
+    std :: string filename = "level";
+    filename.insert(5, std :: to_string(level));
+    if (!fileManager -> readFile(filename)) {
+        stepController -> setStep(levelInfo -> step);
+        return;
+    };
+    map -> destroy();
+    player -> destroy();
+    map -> init(renderer);
+    gameObject -> setMap(map -> getMap());
+    map -> draw();
+    player -> setPosition(levelInfo -> strPosition, levelInfo -> colPosition);
+    stepController -> setStep(levelInfo -> step);
 }

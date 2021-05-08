@@ -9,6 +9,8 @@ public:
     static int widthTileQuant;
     static int heightTileQuant;
     static int step;
+    static int strPosition;
+    static int colPosition;
 };
 
 #endif // LEVELINFO_H_INCLUDED
