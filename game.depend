@@ -1,16 +1,22 @@
 # depslib dependency file v1.0
-1620080578 source:c:\users\igorg\desktop\projects(again)\cpp-game\main.cpp
+1624000898 source:c:\users\igorg\desktop\projects(again)\cpp-game\main.cpp
 	"Game.h"
 	<string>
 	<iostream>
 
-1620480603 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
+1624045134 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
 	"SDL2/SDL.h"
+	"TextManager.h"
+	"SDL2/SDL_ttf.h"
+	"SDL2/SDL_image.h"
+	"Menu.h"
+	"Rules.h"
+	"Profile.h"
 	"Map.h"
 	"Player.h"
 	"FileManager.h"
 
-1620482132 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
+1624046060 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
 	"Game.h"
 	<iostream>
 	<string>
@@ -21,29 +27,31 @@
 	"StepController.h"
 	"LevelInfo.h"
 
-1620406843 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
+1624038484 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
 	"GameObject.h"
 	"Tile.h"
 	<iostream>
 
-1620334940 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
+1623521958 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	"GameObjectPosition.h"
 
-1620406864 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
+1624038116 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
 	"Tile.h"
 	<iostream>
 
-1620394132 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
+1624027683 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
 	<vector>
 	"Box.h"
 	"Monster.h"
 	"Key.h"
 	"Lock.h"
 	"Trap.h"
+	"Star.h"
+	"Wall.h"
 
-1620422706 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+1624043573 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
 	"Map.h"
 	"Tile.h"
 	"Box.h"
@@ -55,21 +63,23 @@
 	"Level.h"
 	"LevelInfo.h"
 
-1620406972 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
+1624043476 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
 	<iostream>
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	<vector>
 
-1620408633 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1624039375 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
 
-1620408346 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+1623528322 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
 	<vector>
 	"DynamicGameObject.h"
 	"StepController.h"
+	"PlayerAnimation.h"
+	"Profile.h"
 
 1620080185 c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.h
 
@@ -79,7 +89,7 @@
 1620334906 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
 	"DynamicGameObject.h"
 
-1620334778 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
+1621194981 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
 	"Obstacle.h"
 	<iostream>
 	"Tile.h"
@@ -87,7 +97,7 @@
 1620333393 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
 	"Obstacle.h"
 
-1620333649 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
+1621195774 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
 	"Monster.h"
 	"Tile.h"
 	<iostream>
@@ -95,12 +105,12 @@
 1620233983 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
 	"Obstacle.h"
 
-1620406591 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
+1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
 	"Box.h"
 	"Tile.h"
 	<iostream>
 
-1620334968 c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.h
+1621195034 c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.h
 	"GameObject.h"
 
 1620225056 source:c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.cpp
@@ -108,14 +118,14 @@
 1620233894 c:\users\igorg\desktop\projects(again)\cpp-game\key.h
 	"KeyLockSystem.h"
 
-1620233894 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
+1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
 	"Key.h"
 	"Tile.h"
 
 1620233942 c:\users\igorg\desktop\projects(again)\cpp-game\lock.h
 	"KeyLockSystem.h"
 
-1620233942 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
+1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
 	"Lock.h"
 	"Tile.h"
 
@@ -128,19 +138,20 @@
 1620332462 c:\users\igorg\desktop\projects(again)\cpp-game\trap.h
 	"GameObject.h"
 
-1620334730 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
+1620560833 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
 	"Trap.h"
 	"Tile.h"
 
-1620386124 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
+1624038735 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
+	"TextManager.h"
 
-1620381496 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
+1624038658 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
 	"StepController.h"
 
-1620391121 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
+1624043104 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
 	"Level.h"
 
-1620422093 c:\users\igorg\desktop\projects(again)\cpp-game\level.h
+1624043093 c:\users\igorg\desktop\projects(again)\cpp-game\level.h
 
 1620422014 source:c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.cpp
 	"LevelInfo.h"
@@ -151,8 +162,72 @@
 	"Level.h"
 	"LevelInfo.h"
 
-1620481038 source:c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.cpp
+1624043115 source:c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.cpp
 	<iostream>
 	<fstream>
 	"FileManager.h"
+
+1621195089 c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.h
+	"Animation.h"
+
+1621195089 source:c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.cpp
+	"PlayerAnimation.h"
+
+1620656414 source:c:\users\igorg\desktop\projects(again)\cpp-game\animation.cpp
+	"Animation.h"
+
+1621195271 c:\users\igorg\desktop\projects(again)\cpp-game\animation.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+
+1624034206 source:c:\users\igorg\desktop\projects(again)\cpp-game\menu.cpp
+	"Menu.h"
+
+1624029468 c:\users\igorg\desktop\projects(again)\cpp-game\menu.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+	"TextManager.h"
+	<iostream>
+	"SDL2/SDL_image.h"
+
+1623518719 c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+
+1624025984 source:c:\users\igorg\desktop\projects(again)\cpp-game\profile.cpp
+	"Profile.h"
+
+1624025984 c:\users\igorg\desktop\projects(again)\cpp-game\profile.h
+	<iterator>
+	<iostream>
+	<vector>
+	"TextManager.h"
+	<fstream>
+
+1623517977 source:c:\users\igorg\desktop\projects(again)\cpp-game\rules.cpp
+	"Rules.h"
+
+1623449214 c:\users\igorg\desktop\projects(again)\cpp-game\rules.h
+	<iostream>
+	"TextManager.h"
+	"Profile.h"
+	"SDL2/SDL_image.h"
+
+1621552329 source:c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.cpp
+	"TextManager.h"
+
+1623511375 c:\users\igorg\desktop\projects(again)\cpp-game\star.h
+	"GameObject.h"
+
+1623512156 source:c:\users\igorg\desktop\projects(again)\cpp-game\star.cpp
+	"Star.h"
+	"Tile.h"
+
+1624027532 c:\users\igorg\desktop\projects(again)\cpp-game\wall.h
+	"GameObject.h"
+
+1624027867 source:c:\users\igorg\desktop\projects(again)\cpp-game\wall.cpp
+	"Wall.h"
+	"Tile.h"
 

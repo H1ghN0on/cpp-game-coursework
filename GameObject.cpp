@@ -4,12 +4,16 @@
 using namespace std;
 SDL_Renderer* GameObject :: renderer;
 Tile** GameObject :: tile;
+int GameObject :: textureSize;
 GameObject :: GameObject() {
 
 }
 
-GameObject :: GameObject(SDL_Renderer* u_renderer) {
+GameObject :: GameObject(SDL_Renderer* u_renderer, int textureSize_) {
     renderer = u_renderer;
+    textureSize = textureSize_;
+    destObjectR.w = srcObjectR.w = textureSize;
+    destObjectR.h = srcObjectR.h = textureSize;
 }
 
 void GameObject :: setMap(Tile **u_tile) {

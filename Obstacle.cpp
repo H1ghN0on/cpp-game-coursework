@@ -3,73 +3,73 @@
 #include "Tile.h"
 using namespace std;
 void Obstacle :: update() {
-    switch (move -> direction) {
+    switch (moveInfo -> direction) {
         case 0: {
             break;
         }
         case 1: {
-            if (move -> remain) {
-                this -> setY(y - move -> step);
+            if (moveInfo -> remain) {
+                this -> setY(y - moveInfo -> step);
                 destObjectR.y = this -> getY();
-                move -> remain--;
+                moveInfo -> remain--;
                 return;
             }
-            move -> direction = 0;
+            moveInfo -> direction = 0;
             break;
         }
         case 2: {
-            if (move -> remain) {
-                this -> setX(x + move -> step);
+            if (moveInfo -> remain) {
+                this -> setX(x + moveInfo -> step);
                 destObjectR.x = this -> getX();
-                move -> remain--;
+                moveInfo -> remain--;
                 return;
             }
-            move -> direction = 0;
+            moveInfo -> direction = 0;
             break;
         }
         case 3: {
-            if (move -> remain) {
-                this -> setY(y + move -> step);
+            if (moveInfo -> remain) {
+                this -> setY(y + moveInfo -> step);
                 destObjectR.y = this -> getY();
-                move -> remain--;
+                moveInfo -> remain--;
                 return;
             }
-            move -> direction = 0;
+            moveInfo -> direction = 0;
             break;
         }
         case 4: {
-            if (move -> remain) {
-                this -> setX(x - move -> step);
+            if (moveInfo -> remain) {
+                this -> setX(x - moveInfo -> step);
                 destObjectR.x = this -> getX();
-                move -> remain--;
+                moveInfo -> remain--;
                 return;
             }
-            move -> direction = 0;
+            moveInfo -> direction = 0;
             break;
         }
     }
 }
 void Obstacle :: moveTo(int direction) {
-    move -> remain = 64 / move -> step;
+    moveInfo -> remain = textureSize / moveInfo -> step;
     switch (direction) {
         //top
         case 1: {
-            move -> direction = 1;
+            moveInfo -> direction = 1;
             break;
         }
         // right
         case 2: {
-            move -> direction = 2;
+            moveInfo -> direction = 2;
             break;
         }
         //down
         case 3: {
-            move -> direction = 3;
+            moveInfo -> direction = 3;
             break;
         }
         //left
         case 4: {
-            move -> direction = 4;
+            moveInfo -> direction = 4;
             break;
         }
     }

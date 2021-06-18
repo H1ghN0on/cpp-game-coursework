@@ -12,16 +12,17 @@ using namespace std;
 
 Tile** Map :: tile;
 
-void Map :: init(SDL_Renderer* u_renderer) {
-    destTileR.w = srcTileR.w = 64;
-    destTileR.h = srcTileR.h = 64;
+void Map :: init(SDL_Renderer* u_renderer, int textureSize_) {
+    textureSize = textureSize_;
+    destTileR.w = srcTileR.w = textureSize;
+    destTileR.h = srcTileR.h = textureSize;
     srcTileR.x = srcTileR.y = 0;
     renderer = u_renderer;
     mapTile = IMG_LoadTexture(renderer, "assets/tile.png");
     box = IMG_LoadTexture(renderer, "assets/box.png");
     level_ = new Level;
     levelInfo_ = new LevelInfo;
-    StepController *stepController = new StepController(levelInfo_ -> step);
+    StepController *stepController = new StepController(levelInfo_ -> step, renderer);
     delete stepController;
     widthTileQuant = levelInfo_ -> widthTileQuant;
     heightTileQuant = levelInfo_ -> heightTileQuant;
@@ -46,8 +47,10 @@ void Map :: draw() {
     for (int i = 0; i < widthTileQuant; i++) {
         for (int j = 0; j < heightTileQuant; j++) {
             tile[i][j].setType(0);
-            if (level_ -> level[i][j] != 0) {
-                tile[i][j].setType(level_ -> level[i][j]);
+            for (int k = 1; k < level_ -> level[i][j][0] + 1; k++) {
+                if (level_ -> level[i][j][k] != 0) {
+                    tile[i][j].setType(level_ -> level[i][j][k]);
+                }
             }
             tile[i][j].setX(dx);
             tile[i][j].setY(dy);
@@ -81,30 +84,40 @@ void Map :: draw() {
                     tile[i][j].trap -> init(i, j, false);
                     traps.push_back(tile[i][j].trap);
                 }
+                if (tileType[k] == 6) {
+                    tile[i][j].star = new Star;
+                    tile[i][j].star -> init(i, j);
+                    stars.push_back(tile[i][j].star);
+                }
+                if (tileType[k] == 7) {
+                    tile[i][j].wall = new Wall;
+                    tile[i][j].wall -> init(i, j);
+                    walls.push_back(tile[i][j].wall);
+                }
             }
-            dx += 64;
+            dx += textureSize;
         }
         dx = 0;
-        dy += 64;
+        dy += textureSize;
     }
 }
 void Map :: update() {
     int size = boxes.size();
     for (int i = 0; i < size; i++) {
         boxes[i] -> update();
-        if (boxes[i] -> move -> remain == 1) {
+        if (boxes[i] -> moveInfo -> remain == 1) {
             int str = boxes[i] -> tilePosition -> str;
             int col = boxes[i] -> tilePosition -> col;
-            this -> obstacleSwitch(str, col, boxes[i] -> move -> direction, i);
+            this -> obstacleSwitch(str, col, boxes[i] -> moveInfo -> direction, i);
         }
     }
     size = monsters.size();
     for (int i = 0; i < size; i++) {
         monsters[i] -> update();
-        if (monsters[i] -> move -> remain == 1) {
+        if (monsters[i] -> moveInfo -> remain == 1) {
             int str = monsters[i] -> tilePosition -> str;
             int col = monsters[i] -> tilePosition -> col;
-            this -> monsterSwitch(str, col, monsters[i] -> move -> direction, i);
+            this -> monsterSwitch(str, col, monsters[i] -> moveInfo -> direction, i);
         }
         if (monsters[i] -> getDestroyFlag()) {
             int str = monsters[i] -> tilePosition -> str;
@@ -165,6 +178,14 @@ void Map :: render() {
     size = locks.size();
     for (int i = 0; i < size; i++) {
         locks[i] -> render();
+    }
+    size = stars.size();
+    for (int i = 0; i < size; i++) {
+        stars[i] -> render();
+    }
+    size = walls.size();
+    for (int i = 0; i < size; i++) {
+        walls[i] -> render();
     }
 }
 
@@ -247,5 +268,7 @@ void Map :: destroy() {
     keys.clear();
     locks.clear();
     traps.clear();
+    stars.clear();
+    walls.clear();
     SDL_DestroyTexture(mapTile);
 }

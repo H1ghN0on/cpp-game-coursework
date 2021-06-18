@@ -12,13 +12,14 @@ protected:
         int str;
         int col;
     };
+    static int textureSize;
     static SDL_Renderer *renderer;
     static Tile **tile;
     SDL_Texture *objectTexture = NULL;
     SDL_Rect destObjectR, srcObjectR;
 
 public:
-    GameObject(SDL_Renderer *u_renderer);
+    GameObject(SDL_Renderer *u_renderer, int textureSize_);
     TilePosition *tilePosition = NULL;
     void setMap(Tile **u_tile);
     virtual void render();

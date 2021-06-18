@@ -15,7 +15,7 @@ public:
 //        {0, 2, 0, 0, 2, 0, 1, 0, 0, 0},
 //        {0, 0, 1, 0, 0, 0, 0, 0, 0, 3},
 //    };
-    static int **level;
+    static int ***level;
 };
 
 #endif // LEVEL_H_INCLUDED

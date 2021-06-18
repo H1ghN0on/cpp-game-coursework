@@ -12,8 +12,11 @@ class Monster;
 class Tile;
 class Key;
 class Lock;
+class Star;
+class Wall;
 class Map {
 private:
+    int textureSize;
     SDL_Texture *box = NULL;
     SDL_Texture *mapTile = NULL;
     SDL_Renderer *renderer = NULL;
@@ -27,13 +30,15 @@ private:
     std :: vector <Key*> keys;
     std :: vector <Lock*> locks;
     std :: vector <Trap*> traps;
+    std :: vector <Star*> stars;
+    std :: vector <Wall*> walls;
     void obstacleSwitch(int str, int col, int direction, int vectorPosition);
     void monsterSwitch(int str, int col, int direction, int vectorPosition);
     Level *level_ = NULL;
     LevelInfo *levelInfo_ = NULL;
 
 public:
-    void init(SDL_Renderer *u_renderer);
+    void init(SDL_Renderer *u_renderer, int textureSize_);
     void update();
     void render();
     void draw();

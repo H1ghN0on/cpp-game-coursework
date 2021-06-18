@@ -13,11 +13,15 @@ bool FileManager :: readFile(string filename) {
     out.read((char*)&step, sizeof(int));
     out.read((char*)&strPosition, sizeof(int));
     out.read((char*)&colPosition, sizeof(int));
-    level = new int*[widthTileQuant];
+    level = new int**[widthTileQuant];
     for (int i = 0; i < widthTileQuant;i++) {
-        level[i] = new int[heightTileQuant];
+        level[i] = new int*[heightTileQuant];
         for (int j = 0;j < heightTileQuant; j++) {
-            out.read((char*)&level[i][j],sizeof(int));//чтение каждого элемента файла в массив поэлементно
+            level[i][j] = new int[3];
+            out.read((char*)&level[i][j][0], sizeof(int));
+            for (int k = 1; k < level[i][j][0] + 1; k++) {
+                out.read((char*)&level[i][j][k], sizeof(int));
+            }
         }
     }
     out.close();

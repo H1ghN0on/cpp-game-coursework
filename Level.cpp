@@ -1,3 +1,3 @@
 #include "Level.h"
 
-int** Level :: level;
+int*** Level :: level;

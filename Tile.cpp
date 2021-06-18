@@ -43,6 +43,14 @@ void Tile :: destroy() {
                 delete this -> trap;
                 break;
             }
+            case 6: {
+                delete this -> star;
+                break;
+            }
+            case 7: {
+                delete this -> wall;
+                break;
+            }
 
         }
     }

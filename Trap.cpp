@@ -3,8 +3,8 @@
 void Trap :: init(int i, int j, int active) {
     isActive = active;
     tilePosition = new TilePosition;
-    destObjectR.w = srcObjectR.w = 64;
-    destObjectR.h = srcObjectR.h = 64;
+    destObjectR.w = srcObjectR.w = textureSize;
+    destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;
     srcObjectR.y = 0;
     tile[i][j].trap -> setX(tile[i][j].getX());

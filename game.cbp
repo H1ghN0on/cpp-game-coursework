@@ -35,6 +35,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Animation.cpp" />
+		<Unit filename="Animation.h" />
 		<Unit filename="Box.cpp" />
 		<Unit filename="Box.h" />
 		<Unit filename="DynamicGameObject.cpp" />
@@ -59,14 +61,26 @@
 		<Unit filename="Lock.h" />
 		<Unit filename="Map.cpp" />
 		<Unit filename="Map.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
 		<Unit filename="Monster.cpp" />
 		<Unit filename="Monster.h" />
 		<Unit filename="Obstacle.cpp" />
 		<Unit filename="Obstacle.h" />
 		<Unit filename="Player.cpp" />
 		<Unit filename="Player.h" />
+		<Unit filename="PlayerAnimation.cpp" />
+		<Unit filename="PlayerAnimation.h" />
+		<Unit filename="Profile.cpp" />
+		<Unit filename="Profile.h" />
+		<Unit filename="Rules.cpp" />
+		<Unit filename="Rules.h" />
+		<Unit filename="Star.cpp" />
+		<Unit filename="Star.h" />
 		<Unit filename="StepController.cpp" />
 		<Unit filename="StepController.h" />
+		<Unit filename="TextManager.cpp" />
+		<Unit filename="TextManager.h" />
 		<Unit filename="Tile.cpp" />
 		<Unit filename="Tile.h" />
 		<Unit filename="Trap.cpp" />
