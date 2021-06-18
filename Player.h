@@ -16,6 +16,7 @@ protected:
     StepController *stepController = NULL;
     MoveInfo *moveInfo;
     std :: vector <int> keysId;
+    bool isLevelPassed = false;
 public:
     void init(StepController* stepController_, Profile *profile);
     void setPosition(int str, int col);
@@ -24,6 +25,8 @@ public:
     void moveTo(int direction);
     void moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextLine, int secondNextLine, int direction);
     void destroy();
+    bool getIsLevelPassed();
+    void setIsLevelPassed(bool status);
 };
 
 #endif // PLAYER_H_INCLUDED

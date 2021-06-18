@@ -150,6 +150,10 @@ void Profile :: setLastPassedLevel() {
     players[index].lastPassedLevel++;
 }
 
+void Profile :: setLastPassedLevel(int level) {
+    players[index].lastPassedLevel = level;
+}
+
 void Profile :: destroy() {
     SDL_DestroyTexture(text.texture);
     SDL_DestroyTexture(correct.texture);

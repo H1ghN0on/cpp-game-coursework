@@ -107,7 +107,9 @@ void Game :: handleEvents() {
                 case SDL_KEYDOWN: {
                     switch (event.key.keysym.sym) {
                         case SDLK_BACKSPACE: {
-                            profile -> enter();
+                            if (!profile -> checkExistance()) {
+                                profile -> enter();
+                            }
                             break;
                         }
                         case SDLK_ESCAPE: {
@@ -215,7 +217,6 @@ void Game :: handleEvents() {
                             if (menu -> getChapterSelectActive()) {
                                 switch (chapterBtn) {
                                     case 0: {
-                                        cout << "Выбран уровень 1" << endl;
                                         setLevel(1);
                                         menu -> setMenuActive(false);
                                         isMenuActive = false;
@@ -224,7 +225,6 @@ void Game :: handleEvents() {
                                         break;
                                     }
                                     case 1: {
-                                        cout << "Выбран уровень 2" << endl;
                                         setLevel(2);
                                         menu -> setMenuActive(false);
                                         isMenuActive = false;
@@ -233,7 +233,6 @@ void Game :: handleEvents() {
                                         break;
                                     }
                                     case 2: {
-                                        cout << "Выбран уровень 3" << endl;
                                         setLevel(3);
                                         menu -> setMenuActive(false);
                                         isMenuActive = false;
@@ -242,7 +241,6 @@ void Game :: handleEvents() {
                                         break;
                                     }
                                     case 3: {
-                                        cout << "Выбран уровень 4" << endl;
                                         setLevel(4);
                                         menu -> setMenuActive(false);
                                         isMenuActive = false;
@@ -251,11 +249,10 @@ void Game :: handleEvents() {
                                         break;
                                     }
                                     case 4: {
-                                        cout << "Выбран уровень 5" << endl;
+                                        setLevel(5);
                                         menu -> setMenuActive(false);
                                         isMenuActive = false;
                                         isGameActive = true;
-                                        setLevel(5);
                                         menu -> setZero();
                                         break;
                                     }
@@ -274,6 +271,9 @@ void Game :: handleEvents() {
                             isRulesActive = false;
                             menu -> setZero();
                             setLevel(1);
+                            profile -> setLastPassedLevel(1);
+                            profile -> saveFile();
+                            menu -> setLastPassedLevel(1);
                             break;
                         }
                     }
@@ -289,7 +289,19 @@ void Game :: update() {
         player -> update();
         map -> update();
         if (stepController -> getStep() <= -1) {
-            setLevel(activeLevel);
+            if (player -> getIsLevelPassed()) {
+                player -> setIsLevelPassed(false);
+                menu -> setLastPassedLevel(activeLevel + 1);
+                if (activeLevel < 5) {
+                    setLevel(++activeLevel);
+                } else {
+                    isGameActive = false;
+                    isRulesActive = false;
+                    isMenuActive = true;
+                }
+            } else {
+                setLevel(activeLevel);
+            }
         }
     } else if (isRulesActive) {
         rules -> update();
@@ -347,7 +359,8 @@ void Game :: setLevel(int level) {
     filename.insert(5, std :: to_string(level));
     stepController -> destroy();
     if (!fileManager -> readFile(filename)) {
-        stepController -> setStep(levelInfo -> step, renderer, level);
+        activeLevel = level;
+        stepController -> setStep(levelInfo -> step, level);
         return;
     };
     map -> destroy();
@@ -356,6 +369,6 @@ void Game :: setLevel(int level) {
     gameObject -> setMap(map -> getMap());
     map -> draw();
     player -> setPosition(levelInfo -> strPosition, levelInfo -> colPosition);
-    stepController -> setStep(levelInfo -> step, renderer, level);
+    stepController -> setStep(levelInfo -> step, level);
     activeLevel = level;
 }

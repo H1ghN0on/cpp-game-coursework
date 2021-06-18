@@ -251,11 +251,13 @@ void Player :: moveTo(int direction) {
 }
 
 void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNextLine, int secondNextLine, int direction) {
+    this -> changeDirection(direction);
     //move to wall
     int str = tilePosition -> str;
     int col = tilePosition -> col;
     if (firstNextTile.findType(6)) {
         stepController -> setStep(-10, renderer);
+        isLevelPassed = true;
         if (profile -> getLastPassedLevel() == stepController -> level && stepController -> level != 5) {
             profile -> setLastPassedLevel();
             profile -> saveFile();
@@ -291,7 +293,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
             }
         }
     }
-    if (firstNextTile.findType(5) && firstNextTile.trap -> getActive() && !firstNextTile.findType(1) && !!firstNextTile.findType(2) && !firstNextTile.findType(4)) {
+    if (firstNextTile.findType(5) && firstNextTile.trap -> getActive() && !firstNextTile.findType(1) && !firstNextTile.findType(2) && !firstNextTile.findType(4)) {
         stepController -> passStep();
     }
     stepController -> passStep();
@@ -331,7 +333,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
     } //monster move
     else if (secondNextLine >= 0 && secondNextLine < 12 && firstNextTile.findType(2) && (!secondNextTile.findType(1) && !secondNextTile.findType(2) && !secondNextTile.findType(4) && !secondNextTile.findType(7)) && firstNextTile.monster -> moveInfo -> direction == 0) {
         firstNextTile.monster -> moveTo(direction);
-        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+        if (tile[str][col].findType(5) && tile[str][col].trap -> getActive()) {
             stepController -> passStep();
         }
         moveInfo -> direction = 0;
@@ -340,7 +342,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
     } //monster destroy
     else if (secondNextLine >= 0 && secondNextLine < 12 && firstNextTile.findType(2) && (secondNextTile.findType(1) || secondNextTile.findType(7) || secondNextTile.findType(2) || secondNextTile.findType(4)) && firstNextTile.monster -> moveInfo -> direction == 0) {
         firstNextTile.monster -> setDestroyFlag();
-        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+        if (tile[str][col].findType(5) && tile[str][col].trap -> getActive()) {
             stepController -> passStep();
         }
         moveInfo -> direction = 0;
@@ -348,7 +350,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
         cout << stepController -> getStep() << endl;
     } else if ((secondNextLine == -1 || secondNextLine == 12 || firstNextTile.findType(7)) && firstNextTile.findType(2) && firstNextTile.monster -> moveInfo -> direction == 0){
         firstNextTile.monster -> setDestroyFlag();
-        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+        if (tile[str][col].findType(5) && tile[str][col].trap -> getActive()) {
             stepController -> passStep();
         }
         moveInfo -> direction = 0;
@@ -412,7 +414,7 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
                 return;
             }
         }
-        if (tile[str][col].findType(5) && !tile[str][col].trap -> getActive()) {
+        if (tile[str][col].findType(5) && tile[str][col].trap -> getActive()) {
             stepController -> passStep();
         }
         moveInfo -> direction = 0;
@@ -423,6 +425,14 @@ void Player :: moveObject(Tile firstNextTile, Tile secondNextTile, int firstNext
         moveInfo -> remain = 0;
         cout << stepController -> getStep() << endl;
     }
+}
+
+bool Player :: getIsLevelPassed() {
+    return isLevelPassed;
+}
+
+void Player :: setIsLevelPassed(bool status) {
+    isLevelPassed = status;
 }
 
 void Player :: destroy() {

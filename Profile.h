@@ -41,6 +41,7 @@ public:
     string getName();
     void destroy();
     void setLastPassedLevel();
+    void setLastPassedLevel(int level);
     void setIsEntered();
     bool getIsEntered();
     bool checkEnter();

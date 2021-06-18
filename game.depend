@@ -16,7 +16,7 @@
 	"Player.h"
 	"FileManager.h"
 
-1624046060 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
+1624056013 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
 	"Game.h"
 	<iostream>
 	<string>
@@ -69,12 +69,12 @@
 	"SDL2/SDL_image.h"
 	<vector>
 
-1624039375 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1624058061 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
 
-1623528322 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+1624049354 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
 	<vector>
 	"DynamicGameObject.h"
 	"StepController.h"
@@ -142,10 +142,10 @@
 	"Trap.h"
 	"Tile.h"
 
-1624038735 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
+1624047568 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
 	"TextManager.h"
 
-1624038658 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
+1624048050 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
 	"StepController.h"
 
 1624043104 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
@@ -180,7 +180,7 @@
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 
-1624034206 source:c:\users\igorg\desktop\projects(again)\cpp-game\menu.cpp
+1624057507 source:c:\users\igorg\desktop\projects(again)\cpp-game\menu.cpp
 	"Menu.h"
 
 1624029468 c:\users\igorg\desktop\projects(again)\cpp-game\menu.h
@@ -195,10 +195,10 @@
 	"SDL2/SDL.h"
 	"SDL2/SDL_ttf.h"
 
-1624025984 source:c:\users\igorg\desktop\projects(again)\cpp-game\profile.cpp
+1624048471 source:c:\users\igorg\desktop\projects(again)\cpp-game\profile.cpp
 	"Profile.h"
 
-1624025984 c:\users\igorg\desktop\projects(again)\cpp-game\profile.h
+1624048498 c:\users\igorg\desktop\projects(again)\cpp-game\profile.h
 	<iterator>
 	<iostream>
 	<vector>

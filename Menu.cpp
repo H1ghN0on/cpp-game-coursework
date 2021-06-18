@@ -259,7 +259,7 @@ void Menu :: update() {
             chapter[chapterStep] -> dstPlaceholderRect.x -= chapterSpeed;
             chapterChainRect[chapterStep].x -= chapterSpeed;
             sum += chapterSpeed;
-            if (sum == 800) {
+            if (sum == 768) {
                 sum = 0;
                 chapterStep++;
             }
@@ -533,6 +533,12 @@ void Menu :: createHello(string name) {
 void Menu :: setLastPassedLevel(int level) {
     lastPassedLevel = level;
     if (lastPassedLevel != 5) {
+        for (int i = 1; i < lastPassedLevel; i++) {
+            SDL_DestroyTexture(chapter[i] -> placeholder);
+            temp_surf = IMG_Load("assets/placeholder-empty.png");
+            chapter[i] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+            SDL_FreeSurface(temp_surf);
+        }
         for (int i = lastPassedLevel; i < 5; i++) {
             SDL_DestroyTexture(chapter[i] -> placeholder);
             temp_surf = IMG_Load("assets/placeholder-blocked.png");
