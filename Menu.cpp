@@ -395,6 +395,7 @@ void Menu :: setChapterSelectActive(int active) {
     if (active == 0) {
         isMainMenuActive = false;
         isChapterSelectActive = true;
+        isChapterSelectDone = false;
     } else {
         isMainMenuActive = true;
         isChapterSelectActive = false;
@@ -549,6 +550,18 @@ void Menu :: setLastPassedLevel(int level) {
 }
 
 void Menu :: setZero() {
+    SDL_DestroyTexture(item[menuActiveBtn] -> placeholder);
+    SDL_DestroyTexture(chapter[chapterActiveBtn] -> placeholder);
+    temp_surf = IMG_Load("assets/placeholder-empty.png");
+    item[menuActiveBtn] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+    chapter[chapterActiveBtn] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+    SDL_FreeSurface(temp_surf);
+    menuActiveBtn = 0;
+    chapterActiveBtn = 0;
+    temp_surf = IMG_Load("assets/placeholder-active.png");
+    item[menuActiveBtn] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+    chapter[chapterActiveBtn] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+    SDL_FreeSurface(temp_surf);
     isMenuDone = false;
     isBtnChosen = false;
     isChainDone = false;

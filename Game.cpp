@@ -123,9 +123,7 @@ void Game :: handleEvents() {
                                         profile -> addPlayer();
                                         profile -> saveFile();
                                         profile -> newPlayerAlert();
-                                        cout << "new player" << endl;
                                     } else {
-                                        cout << "old player" << endl;
                                         profile -> oldPlayerAlert();
                                     }
                                     menu -> createHello(profile -> getName());
@@ -190,7 +188,7 @@ void Game :: handleEvents() {
                     }
                 }
 	        }
-        } else if (menu -> getChapterSelectActive()) {
+        } else if (menu -> getChapterSelectActive() && menu -> getChapterSelectDone()) {
             switch (event.type) {
                 case SDL_QUIT: {
                     isRunning = false;
@@ -207,55 +205,53 @@ void Game :: handleEvents() {
                             break;
                         }
                         case SDLK_ESCAPE: {
-                            if (!!menu -> getChapterSelectDone()) {
+                            if (menu -> getChapterSelectDone()) {
                                 menu -> setChapterSelectActive(1);
                                 menu -> isMenuDone = false;
                             }
                             break;
                         }
                         case SDLK_RETURN: {
-                            if (menu -> getChapterSelectActive()) {
-                                switch (chapterBtn) {
-                                    case 0: {
-                                        setLevel(1);
-                                        menu -> setMenuActive(false);
-                                        isMenuActive = false;
-                                        isGameActive = true;
-                                        menu -> setZero();
-                                        break;
-                                    }
-                                    case 1: {
-                                        setLevel(2);
-                                        menu -> setMenuActive(false);
-                                        isMenuActive = false;
-                                        isGameActive = true;
-                                        menu -> setZero();
-                                        break;
-                                    }
-                                    case 2: {
-                                        setLevel(3);
-                                        menu -> setMenuActive(false);
-                                        isMenuActive = false;
-                                        isGameActive = true;
-                                        menu -> setZero();
-                                        break;
-                                    }
-                                    case 3: {
-                                        setLevel(4);
-                                        menu -> setMenuActive(false);
-                                        isMenuActive = false;
-                                        isGameActive = true;
-                                        menu -> setZero();
-                                        break;
-                                    }
-                                    case 4: {
-                                        setLevel(5);
-                                        menu -> setMenuActive(false);
-                                        isMenuActive = false;
-                                        isGameActive = true;
-                                        menu -> setZero();
-                                        break;
-                                    }
+                            switch (chapterBtn) {
+                                case 0: {
+                                    setLevel(1);
+                                    menu -> setMenuActive(false);
+                                    isMenuActive = false;
+                                    isGameActive = true;
+                                    menu -> setZero();
+                                    break;
+                                }
+                                case 1: {
+                                    setLevel(2);
+                                    menu -> setMenuActive(false);
+                                    isMenuActive = false;
+                                    isGameActive = true;
+                                    menu -> setZero();
+                                    break;
+                                }
+                                case 2: {
+                                    setLevel(3);
+                                    menu -> setMenuActive(false);
+                                    isMenuActive = false;
+                                    isGameActive = true;
+                                    menu -> setZero();
+                                    break;
+                                }
+                                case 3: {
+                                    setLevel(4);
+                                    menu -> setMenuActive(false);
+                                    isMenuActive = false;
+                                    isGameActive = true;
+                                    menu -> setZero();
+                                    break;
+                                }
+                                case 4: {
+                                    setLevel(5);
+                                    menu -> setMenuActive(false);
+                                    isMenuActive = false;
+                                    isGameActive = true;
+                                    menu -> setZero();
+                                    break;
                                 }
                             }
                         }
