@@ -1,16 +1,21 @@
 #ifndef GAME_H_INCLUDED
 #define GAME_H_INCLUDED
+
 #include "SDL2/SDL.h"
-#include "TextManager.h"
 #include "SDL2/SDL_ttf.h"
 #include "SDL2/SDL_image.h"
+
+#include "TextManager.h"
+#include "FileManager.h"
 #include "Menu.h"
 #include "Rules.h"
 #include "Profile.h"
 #include "Map.h"
 #include "Player.h"
-#include "FileManager.h"
+#include "Achievements.h"
+
 //Singletone
+class Achievements;
 class FileManager;
 class StepController;
 class Game {
@@ -20,27 +25,33 @@ private:
 	bool isRulesActive = false;
 	bool isEnterName = false;
 	bool isGameActive = false;
+	bool isAchievementsActive = false;
+
 	int activeLevel;
-    Menu *menu = NULL;
-    Rules *rules = NULL;
-    Profile *profile = NULL;
     int textureSize = 64;
     int moving = 0;
-    Map *map = NULL;
-    Player *player = NULL;
+
+    Menu *menu = new Menu;
+    Rules *rules = new Rules;
+    Profile *profile = new Profile;
+    Achievements *achieve = new Achievements;
+    Map *map = new Map;
+    Player *player = new Player;
+    FileManager *fileManager = new FileManager;
+    LevelInfo *levelInfo = new LevelInfo;
     GameObject *gameObject = NULL;
-	bool isPressed = false;
-	SDL_Window* window = NULL;
+    StepController *stepController = NULL;
+
+    SDL_Window* window = NULL;
 	SDL_Renderer* renderer = NULL;
+
+    void setLevel(int number);
+
+    //Запрет доступа к классу (синглтон)
     Game();
 	~Game();
 	Game(Game const&);
 	Game& operator= (Game const&);
-    StepController *stepController = NULL;
-    FileManager *fileManager = new FileManager;
-    LevelInfo *levelInfo = new LevelInfo;
-    void setLevel(int number);
-    int levelNumber;
 
 public:
     string name;

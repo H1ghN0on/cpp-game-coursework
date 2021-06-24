@@ -12,6 +12,7 @@ class PlayerInfo {
 public:
     string name;
     int lastPassedLevel;
+    int achievementLevel;
 };
 
 class Profile {
@@ -38,10 +39,13 @@ public:
     void newPlayerAlert();
     void oldPlayerAlert();
     int getLastPassedLevel();
+    int getAchievementLevel();
     string getName();
     void destroy();
     void setLastPassedLevel();
     void setLastPassedLevel(int level);
+    void setAchievementLevel();
+    void setAchievementLevel(int level);
     void setIsEntered();
     bool getIsEntered();
     bool checkEnter();

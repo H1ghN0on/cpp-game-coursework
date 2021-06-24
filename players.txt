@@ -1,3 +1,6 @@
-2
-nigger 2
-niggers 1
+5
+player 1 1
+jojo 3 4
+nigger 3 2
+niggers 2 1
+jopa 1 3

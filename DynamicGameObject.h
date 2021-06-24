@@ -12,7 +12,7 @@ protected:
         int remain;
     };
 public:
-    MoveInfo *moveInfo = NULL;
+    MoveInfo *moveInfo = new MoveInfo;
 };
 
 #endif // DYNAMICGAMEOBJECT_H_INCLUDED

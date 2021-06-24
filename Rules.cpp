@@ -7,6 +7,7 @@ void Rules :: init(SDL_Renderer *renderer_) {
     key = createTexture("assets/key.png");
     lock = createTexture("assets/lock.png");
     trap = createTexture("assets/trap-active.png");
+    star = createTexture("assets/nezuko.png");
     title = textManager.renderText("RULES" ,"fonts/CaligulaDodgy.ttf", {255, 255, 255, 255}, 80, renderer);
     setRect(titleR, title.width, title.height, title.xPosition, 25);
     int counter = 150;
@@ -30,7 +31,7 @@ void Rules :: init(SDL_Renderer *renderer_) {
                 break;
             }
             case 4: {
-                name = "Beware the           to avoid ";
+                name = "Beware the           to avoid the fine";
                 break;
             }
             case 5: {
@@ -51,6 +52,7 @@ void Rules :: init(SDL_Renderer *renderer_) {
     setRect(keyR, 64, 64, ruleR[3].x + 140, ruleR[3].y - 13);
     setRect(lockR, 64, 64, ruleR[3].x + 445, ruleR[3].y - 13);
     setRect(trapR, 64, 64, ruleR[4].x + 195, ruleR[4].y - 13);
+    setRect(starR, 64, 64, ruleR[5].x + 170, ruleR[5].y - 13);
     continueAccept = textManager.renderText("Press Enter to conitnue...", "fonts/Leo Normal.ttf", color, 32, renderer);
     setRect(continueAcceptR, continueAccept.width, continueAccept.height, 400, 700);
 }
@@ -92,6 +94,7 @@ void Rules :: render() {
     SDL_RenderCopy(renderer, key, NULL, &keyR);
     SDL_RenderCopy(renderer, lock, NULL, &lockR);
     SDL_RenderCopy(renderer, trap, NULL, &trapR);
+    SDL_RenderCopy(renderer, star, NULL, &starR);
     SDL_RenderCopy(renderer, title.texture, NULL, &titleR);
     for (int i = 0; i < 7; i++) {
         SDL_RenderCopy(renderer, rule[i].texture, NULL, &ruleR[i]);

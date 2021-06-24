@@ -2,7 +2,6 @@
 #include "Tile.h"
 void Lock :: init(int i, int j, int id) {
     lockId = id;
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

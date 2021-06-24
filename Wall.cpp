@@ -2,7 +2,6 @@
 #include "Tile.h"
 
 void Wall :: init(int i, int j) {
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

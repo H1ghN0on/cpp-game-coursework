@@ -2,7 +2,6 @@
 #include "Tile.h"
 void Key :: init(int i, int j, int id) {
     keyId = id;
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

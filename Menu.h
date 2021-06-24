@@ -13,8 +13,8 @@ const int CHANGE_WIDTH_HEIGHT = 1;
 const SDL_Color WHITE = {255, 255, 255, 255};
 class MenuItem {
 public:
-    int width = 800;
-    int height = 800;
+    int width = 768;
+    int height = 832;
     TextInfo textInfo;
     SDL_Texture *placeholder, *text;
     SDL_Surface *tmpSurf;
@@ -76,6 +76,7 @@ public:
     bool getMenuActive();
     bool getChapterSelectActive();
     bool getChapterSelectDone();
+    int getLastPassedLevel();
     void createHello(string name);
     void setLastPassedLevel(int level);
     void setZero();

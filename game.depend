@@ -1,22 +1,23 @@
 # depslib dependency file v1.0
-1624000898 source:c:\users\igorg\desktop\projects(again)\cpp-game\main.cpp
+1624522494 source:c:\users\igorg\desktop\projects(again)\cpp-game\main.cpp
 	"Game.h"
 	<string>
 	<iostream>
 
-1624045134 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
+1624522865 c:\users\igorg\desktop\projects(again)\cpp-game\game.h
 	"SDL2/SDL.h"
-	"TextManager.h"
 	"SDL2/SDL_ttf.h"
 	"SDL2/SDL_image.h"
+	"TextManager.h"
+	"FileManager.h"
 	"Menu.h"
 	"Rules.h"
 	"Profile.h"
 	"Map.h"
 	"Player.h"
-	"FileManager.h"
+	"Achievements.h"
 
-1624225134 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
+1624526379 source:c:\users\igorg\desktop\projects(again)\cpp-game\game.cpp
 	"Game.h"
 	<iostream>
 	<string>
@@ -27,21 +28,21 @@
 	"StepController.h"
 	"LevelInfo.h"
 
-1624038484 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
+1624526631 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.cpp
 	"GameObject.h"
 	"Tile.h"
 	<iostream>
 
-1623521958 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
+1624526956 c:\users\igorg\desktop\projects(again)\cpp-game\gameobject.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	"GameObjectPosition.h"
 
-1624038116 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
+1624284259 source:c:\users\igorg\desktop\projects(again)\cpp-game\tile.cpp
 	"Tile.h"
 	<iostream>
 
-1624027683 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\tile.h
 	<vector>
 	"Box.h"
 	"Monster.h"
@@ -51,7 +52,7 @@
 	"Star.h"
 	"Wall.h"
 
-1624043573 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
+1624363748 source:c:\users\igorg\desktop\projects(again)\cpp-game\map.cpp
 	"Map.h"
 	"Tile.h"
 	"Box.h"
@@ -63,171 +64,1166 @@
 	"Level.h"
 	"LevelInfo.h"
 
-1624043476 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\map.h
 	<iostream>
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 	<vector>
 
-1624092539 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
+1624527899 source:c:\users\igorg\desktop\projects(again)\cpp-game\player.cpp
 	"Player.h"
 	"Tile.h"
 	<iostream>
 
-1624049354 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
+1624526903 c:\users\igorg\desktop\projects(again)\cpp-game\player.h
 	<vector>
 	"DynamicGameObject.h"
 	"StepController.h"
-	"PlayerAnimation.h"
 	"Profile.h"
 
-1620080185 c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.h
 
-1620052307 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.cpp
+1624284258 source:c:\users\igorg\desktop\projects(again)\cpp-game\gameobjectposition.cpp
 	"GameObjectPosition.h"
 
-1620334906 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
+1624364243 c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.h
 	"DynamicGameObject.h"
 
-1621194981 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
+1624364501 source:c:\users\igorg\desktop\projects(again)\cpp-game\obstacle.cpp
 	"Obstacle.h"
 	<iostream>
 	"Tile.h"
 
-1620333393 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
+1624539562 c:\users\igorg\desktop\projects(again)\cpp-game\monster.h
 	"Obstacle.h"
 
-1624092539 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
+1624539562 source:c:\users\igorg\desktop\projects(again)\cpp-game\monster.cpp
 	"Monster.h"
 	"Tile.h"
 	<iostream>
 
-1620233983 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
+1624284257 c:\users\igorg\desktop\projects(again)\cpp-game\box.h
 	"Obstacle.h"
 
-1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
+1624539611 source:c:\users\igorg\desktop\projects(again)\cpp-game\box.cpp
 	"Box.h"
 	"Tile.h"
 	<iostream>
 
-1621195034 c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.h
+1624526944 c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.h
 	"GameObject.h"
 
 1620225056 source:c:\users\igorg\desktop\projects(again)\cpp-game\dynamicgameobject.cpp
 
-1620233894 c:\users\igorg\desktop\projects(again)\cpp-game\key.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\key.h
 	"KeyLockSystem.h"
 
-1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
+1624539590 source:c:\users\igorg\desktop\projects(again)\cpp-game\key.cpp
 	"Key.h"
 	"Tile.h"
 
-1620233942 c:\users\igorg\desktop\projects(again)\cpp-game\lock.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\lock.h
 	"KeyLockSystem.h"
 
-1621195753 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
+1624539491 source:c:\users\igorg\desktop\projects(again)\cpp-game\lock.cpp
 	"Lock.h"
 	"Tile.h"
 
-1620332462 c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.h
 	"GameObject.h"
 
-1620233799 source:c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.cpp
+1624284258 source:c:\users\igorg\desktop\projects(again)\cpp-game\keylocksystem.cpp
 	"KeyLockSystem.h"
 
-1620332462 c:\users\igorg\desktop\projects(again)\cpp-game\trap.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\trap.h
 	"GameObject.h"
 
-1620560833 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
+1624539219 source:c:\users\igorg\desktop\projects(again)\cpp-game\trap.cpp
 	"Trap.h"
 	"Tile.h"
 
-1624047568 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.h
 	"TextManager.h"
 
-1624048050 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
+1624284259 source:c:\users\igorg\desktop\projects(again)\cpp-game\stepcontroller.cpp
 	"StepController.h"
 
-1624043104 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
+1624284258 source:c:\users\igorg\desktop\projects(again)\cpp-game\level.cpp
 	"Level.h"
 
-1624043093 c:\users\igorg\desktop\projects(again)\cpp-game\level.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\level.h
 
-1620422014 source:c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.cpp
+1624284258 source:c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.cpp
 	"LevelInfo.h"
 
-1620422002 c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.h
+1624284258 c:\users\igorg\desktop\projects(again)\cpp-game\levelinfo.h
 
-1620481038 c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.h
+1624284257 c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.h
 	"Level.h"
 	"LevelInfo.h"
 
-1624043115 source:c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.cpp
+1624284257 source:c:\users\igorg\desktop\projects(again)\cpp-game\filemanager.cpp
 	<iostream>
 	<fstream>
 	"FileManager.h"
 
-1621195089 c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.h
 	"Animation.h"
 
-1624092539 source:c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.cpp
+1624284259 source:c:\users\igorg\desktop\projects(again)\cpp-game\playeranimation.cpp
 	"PlayerAnimation.h"
 
-1620656414 source:c:\users\igorg\desktop\projects(again)\cpp-game\animation.cpp
+1624284257 source:c:\users\igorg\desktop\projects(again)\cpp-game\animation.cpp
 	"Animation.h"
 
-1621195271 c:\users\igorg\desktop\projects(again)\cpp-game\animation.h
+1624284257 c:\users\igorg\desktop\projects(again)\cpp-game\animation.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_image.h"
 
-1624225134 source:c:\users\igorg\desktop\projects(again)\cpp-game\menu.cpp
+1624372003 source:c:\users\igorg\desktop\projects(again)\cpp-game\menu.cpp
 	"Menu.h"
 
-1624029468 c:\users\igorg\desktop\projects(again)\cpp-game\menu.h
+1624371052 c:\users\igorg\desktop\projects(again)\cpp-game\menu.h
 	"SDL2/SDL.h"
 	"SDL2/SDL_ttf.h"
 	"TextManager.h"
 	<iostream>
 	"SDL2/SDL_image.h"
 
-1623518719 c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.h
+1624377516 c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.h
 	<iostream>
 	"SDL2/SDL.h"
 	"SDL2/SDL_ttf.h"
 
-1624048471 source:c:\users\igorg\desktop\projects(again)\cpp-game\profile.cpp
+1624539803 source:c:\users\igorg\desktop\projects(again)\cpp-game\profile.cpp
 	"Profile.h"
 
-1624048498 c:\users\igorg\desktop\projects(again)\cpp-game\profile.h
+1624395856 c:\users\igorg\desktop\projects(again)\cpp-game\profile.h
 	<iterator>
 	<iostream>
 	<vector>
 	"TextManager.h"
 	<fstream>
 
-1623517977 source:c:\users\igorg\desktop\projects(again)\cpp-game\rules.cpp
+1624390601 source:c:\users\igorg\desktop\projects(again)\cpp-game\rules.cpp
 	"Rules.h"
 
-1623449214 c:\users\igorg\desktop\projects(again)\cpp-game\rules.h
+1624390033 c:\users\igorg\desktop\projects(again)\cpp-game\rules.h
 	<iostream>
 	"TextManager.h"
-	"Profile.h"
 	"SDL2/SDL_image.h"
 
-1621552329 source:c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.cpp
+1624284259 source:c:\users\igorg\desktop\projects(again)\cpp-game\textmanager.cpp
 	"TextManager.h"
 
-1623511375 c:\users\igorg\desktop\projects(again)\cpp-game\star.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\star.h
 	"GameObject.h"
 
-1624092539 source:c:\users\igorg\desktop\projects(again)\cpp-game\star.cpp
+1624539506 source:c:\users\igorg\desktop\projects(again)\cpp-game\star.cpp
 	"Star.h"
 	"Tile.h"
 
-1624027532 c:\users\igorg\desktop\projects(again)\cpp-game\wall.h
+1624284259 c:\users\igorg\desktop\projects(again)\cpp-game\wall.h
 	"GameObject.h"
 
-1624027867 source:c:\users\igorg\desktop\projects(again)\cpp-game\wall.cpp
+1624539425 source:c:\users\igorg\desktop\projects(again)\cpp-game\wall.cpp
 	"Wall.h"
 	"Tile.h"
+
+1624284257 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\animation.cpp
+	"Animation.h"
+
+1624284257 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\animation.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+
+1624539611 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\box.cpp
+	"Box.h"
+	"Tile.h"
+	<iostream>
+
+1624284257 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\box.h
+	"Obstacle.h"
+
+1624364243 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\obstacle.h
+	"DynamicGameObject.h"
+
+1624526944 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\dynamicgameobject.h
+	"GameObject.h"
+
+1624526956 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\gameobject.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	"GameObjectPosition.h"
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\gameobjectposition.h
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\tile.h
+	<vector>
+	"Box.h"
+	"Monster.h"
+	"Key.h"
+	"Lock.h"
+	"Trap.h"
+	"Star.h"
+	"Wall.h"
+
+1624539562 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\monster.h
+	"Obstacle.h"
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\key.h
+	"KeyLockSystem.h"
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\keylocksystem.h
+	"GameObject.h"
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\lock.h
+	"KeyLockSystem.h"
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\trap.h
+	"GameObject.h"
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\star.h
+	"GameObject.h"
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\wall.h
+	"GameObject.h"
+
+1624284257 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\dynamicgameobject.cpp
+
+1624284257 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\filemanager.cpp
+	<iostream>
+	<fstream>
+	"FileManager.h"
+
+1624284257 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\filemanager.h
+	"Level.h"
+	"LevelInfo.h"
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\level.h
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\levelinfo.h
+
+1624526379 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\game.cpp
+	"Game.h"
+	<iostream>
+	<string>
+	"SDL2/SDL.h"
+	"Map.h"
+	"GameObject.h"
+	"FileManager.h"
+	"StepController.h"
+	"LevelInfo.h"
+
+1624522865 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\game.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+	"SDL2/SDL_image.h"
+	"TextManager.h"
+	"FileManager.h"
+	"Menu.h"
+	"Rules.h"
+	"Profile.h"
+	"Map.h"
+	"Player.h"
+	"Achievements.h"
+
+1624377516 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\textmanager.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+
+1624371052 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\menu.h
+	"SDL2/SDL.h"
+	"SDL2/SDL_ttf.h"
+	"TextManager.h"
+	<iostream>
+	"SDL2/SDL_image.h"
+
+1624390033 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\rules.h
+	<iostream>
+	"TextManager.h"
+	"SDL2/SDL_image.h"
+
+1624395856 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\profile.h
+	<iterator>
+	<iostream>
+	<vector>
+	"TextManager.h"
+	<fstream>
+
+1624284258 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\map.h
+	<iostream>
+	"SDL2/SDL.h"
+	"SDL2/SDL_image.h"
+	<vector>
+
+1624526903 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\player.h
+	<vector>
+	"DynamicGameObject.h"
+	"StepController.h"
+	"Profile.h"
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\stepcontroller.h
+	"TextManager.h"
+
+1624284259 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\playeranimation.h
+	"Animation.h"
+
+1624526631 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\gameobject.cpp
+	"GameObject.h"
+	"Tile.h"
+	<iostream>
+
+1624284258 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\gameobjectposition.cpp
+	"GameObjectPosition.h"
+
+1624539590 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\key.cpp
+	"Key.h"
+	"Tile.h"
+
+1624284258 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\keylocksystem.cpp
+	"KeyLockSystem.h"
+
+1624284258 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\level.cpp
+	"Level.h"
+
+1624284258 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\levelinfo.cpp
+	"LevelInfo.h"
+
+1624539491 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\lock.cpp
+	"Lock.h"
+	"Tile.h"
+
+1624522494 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\main.cpp
+	"Game.h"
+	<string>
+	<iostream>
+
+1624363748 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\map.cpp
+	"Map.h"
+	"Tile.h"
+	"Box.h"
+	"Monster.h"
+	"Key.h"
+	<iostream>
+	"StepController.h"
+	"Trap.h"
+	"Level.h"
+	"LevelInfo.h"
+
+1624372003 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\menu.cpp
+	"Menu.h"
+
+1624539562 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\monster.cpp
+	"Monster.h"
+	"Tile.h"
+	<iostream>
+
+1624364501 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\obstacle.cpp
+	"Obstacle.h"
+	<iostream>
+	"Tile.h"
+
+1624527899 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\player.cpp
+	"Player.h"
+	"Tile.h"
+	<iostream>
+
+1624284259 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\playeranimation.cpp
+	"PlayerAnimation.h"
+
+1624396037 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\profile.cpp
+	"Profile.h"
+
+1624390601 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\rules.cpp
+	"Rules.h"
+
+1624539506 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\star.cpp
+	"Star.h"
+	"Tile.h"
+
+1624284259 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\stepcontroller.cpp
+	"StepController.h"
+
+1624284259 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\textmanager.cpp
+	"TextManager.h"
+
+1624284259 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\tile.cpp
+	"Tile.h"
+	<iostream>
+
+1624539219 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\trap.cpp
+	"Trap.h"
+	"Tile.h"
+
+1624539425 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\wall.cpp
+	"Wall.h"
+	"Tile.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_metal.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"SDL_locale.h"
+	"SDL_misc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+	<sdkddkver.h>
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\begin_code.h
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\close_code.h
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<sys/cpuinline.h>
+	<mbarrier.h>
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<armintr.h>
+	<arm_neon.h>
+	<arm64intr.h>
+	<arm64_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_metal.h
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572889 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_locale.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572888 c:\libs\sdl2-2.0.14\x86_64-w64-mingw32\include\sdl2\sdl_misc.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1616233080 c:\libs\sdl2_image-2.0.5\x86_64-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL2/SDL_image.h"
+
+1621527584 c:\libs\sdl2_ttf-2.0.15\x86_64-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL2/SDL.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_joystick.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_metal.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_shape.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"SDL_locale.h"
+	"SDL_misc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<wchar.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	<sal.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+	<sdkddkver.h>
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\close_code.h
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	<sys/cpuinline.h>
+	<mbarrier.h>
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	<process.h>
+	<stdlib.h>
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<arm_neon.h>
+	<armintr.h>
+	<arm_neon.h>
+	<arm64intr.h>
+	<arm64_neon.h>
+	<mm3dnow.h>
+	<immintrin.h>
+	<mmintrin.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	<pmmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"SDL_endian.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_sensor.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_sensor.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_metal.h
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_shape.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_locale.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1608572791 c:\libs\sdl2-2.0.14\i686-w64-mingw32\include\sdl2\sdl_misc.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1624287192 c:\libs\sdl2_image-2.0.5\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL2/SDL.h"
+
+1624287209 c:\libs\sdl2_ttf-2.0.15\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL2/SDL.h"
+
+1624382926 source:c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\achievements.cpp
+	"Achievements.h"
+
+1624380968 c:\users\igorg\desktop\game\cpp-game-coursework-main\cpp-game-coursework-main\achievements.h
+	<iostream>
+	"TextManager.h"
+	"SDL2/SDL_image.h"
+
+1624382926 source:c:\users\igorg\desktop\projects(again)\cpp-game\achievements.cpp
+	"Achievements.h"
+
+1624380968 c:\users\igorg\desktop\projects(again)\cpp-game\achievements.h
+	<iostream>
+	"TextManager.h"
+	"SDL2/SDL_image.h"
 

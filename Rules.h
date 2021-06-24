@@ -3,18 +3,17 @@
 
 #include <iostream>
 #include "TextManager.h"
-#include "Profile.h"
 #include "SDL2/SDL_image.h"
 
-class Rules : public Profile {
+class Rules {
 private:
     SDL_Color color = {255, 255, 255, 0};
     bool isFaded = true;
     TextManager textManager;
     TextInfo rule[7], continueAccept, title, nameCorrect;
     SDL_Renderer *renderer;
-    SDL_Texture *box = NULL, *monster = NULL, *key = NULL, *lock = NULL, *trap = NULL;
-    SDL_Rect boxR, monsterR, keyR, lockR, trapR, ruleR[7], continueAcceptR, titleR, nameCorrectR;
+    SDL_Texture *box = NULL, *monster = NULL, *key = NULL, *lock = NULL, *trap = NULL, *star = NULL;
+    SDL_Rect boxR, monsterR, keyR, lockR, trapR, ruleR[7], continueAcceptR, titleR, nameCorrectR, starR;
     int opacity;
     void setRect(SDL_Rect &rect, int width, int height, int x, int y);
 public:

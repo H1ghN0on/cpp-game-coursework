@@ -4,8 +4,6 @@
 using namespace std;
 
 void Box :: init(int i, int j) {
-    moveInfo = new MoveInfo;
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

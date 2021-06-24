@@ -546,6 +546,13 @@ void Menu :: setLastPassedLevel(int level) {
             chapter[i] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
             SDL_FreeSurface(temp_surf);
         }
+    } else {
+         for (int i = 1; i < 5; i++) {
+            SDL_DestroyTexture(chapter[i] -> placeholder);
+            temp_surf = IMG_Load("assets/placeholder-empty.png");
+            chapter[i] -> placeholder = SDL_CreateTextureFromSurface(renderer, temp_surf);
+            SDL_FreeSurface(temp_surf);
+        }
     }
 }
 
@@ -625,4 +632,9 @@ void Menu :: destroy() {
     SDL_DestroyTexture(introFooter[1].texture);
     SDL_DestroyTexture(nameT.texture);
 }
+
+int Menu :: getLastPassedLevel() {
+    return lastPassedLevel;
+}
+
 

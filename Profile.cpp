@@ -27,6 +27,7 @@ void Profile :: init(SDL_Renderer *renderer_) {
         PlayerInfo tmp;
         out >> tmp.name;
         out >> tmp.lastPassedLevel;
+        out >> tmp.achievementLevel;
         players.push_back(tmp);
     }
     out.close();
@@ -78,6 +79,9 @@ void Profile :: render() {
 }
 
 bool Profile :: checkExistance() {
+    SDL_DestroyTexture(correct.texture);
+    correct = textManager.renderText(" ", "fonts/CaligulaDodgy.ttf", {255, 0, 0, 255}, 32, renderer);
+    correctR.w = correct.width;
     for (int i = 0; i < playerSize; i++) {
         if (players[i].name == name) {
             index = i;
@@ -100,6 +104,7 @@ bool Profile :: checkEnter() {
 void Profile :: addPlayer() {
     PlayerInfo player;
     player.lastPassedLevel = 1;
+    player.achievementLevel = 0;
     player.name = name;
     playerSize++;
     index = playerSize - 1;
@@ -110,9 +115,8 @@ void Profile :: saveFile() {
     ofstream in("players.txt");//подключение текстового файла для записи в бинарном режиме
     in << playerSize << endl;
     for (int i = 0; i < playerSize; i++) {
-        in << players[i].name << " " << players[i].lastPassedLevel << endl;
+        in << players[i].name << " " << players[i].lastPassedLevel << " " << players[i].achievementLevel << endl;
     }
-    cout << playerSize << endl;
     in.close();//закрываем файл
 }
 
@@ -146,6 +150,18 @@ int Profile :: getLastPassedLevel() {
     return players[index].lastPassedLevel;
 }
 
+int Profile :: getAchievementLevel() {
+    return players[index].achievementLevel;
+}
+
+void Profile :: setAchievementLevel() {
+    players[index].achievementLevel++;
+}
+
+void Profile :: setAchievementLevel(int level) {
+    players[index].achievementLevel = level;
+}
+
 void Profile :: setLastPassedLevel() {
     players[index].lastPassedLevel++;
 }
@@ -169,3 +185,4 @@ bool Profile :: getIsEntered() {
 void Profile :: setIsEntered() {
     isEntered = true;
 }
+

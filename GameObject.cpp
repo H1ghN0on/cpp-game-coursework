@@ -2,12 +2,11 @@
 #include "Tile.h"
 #include <iostream>
 using namespace std;
+
 SDL_Renderer* GameObject :: renderer;
 Tile** GameObject :: tile;
 int GameObject :: textureSize;
-GameObject :: GameObject() {
-
-}
+GameObject :: GameObject() {}
 
 GameObject :: GameObject(SDL_Renderer* u_renderer, int textureSize_) {
     renderer = u_renderer;

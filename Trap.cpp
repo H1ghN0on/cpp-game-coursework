@@ -2,7 +2,6 @@
 #include "Tile.h"
 void Trap :: init(int i, int j, int active) {
     isActive = active;
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

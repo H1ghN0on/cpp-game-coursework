@@ -3,8 +3,6 @@
 #include <iostream>
 using namespace std;
 void Monster :: init(int i, int j) {
-    moveInfo = new MoveInfo;
-    tilePosition = new TilePosition;
     destObjectR.w = srcObjectR.w = textureSize;
     destObjectR.h = srcObjectR.h = textureSize;
     srcObjectR.x = 0;

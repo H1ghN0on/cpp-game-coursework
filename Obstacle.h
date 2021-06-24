@@ -3,6 +3,8 @@
 #include "DynamicGameObject.h"
 class Tile;
 class Obstacle : public DynamicGameObject {
+private:
+    bool flag = false;
 public:
     void update();
     void moveTo(int direction);
